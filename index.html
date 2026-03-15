@@ -2,43 +2,95 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Akash Raj | Lead Technical Writer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
+/* ===============================
+   DESIGN TOKENS (LIGHT THEME)
+   =============================== */
+
+:root{
+
+--bg:#f5f5f7;
+--text:#1f2937;
+--muted:#475569;
+
+--nav-bg:#ffffff;
+--card-bg:#ffffff;
+
+--accent:#24588d;
+--accent-2:#7c3aed;
+
+--shadow:0 6px 20px rgba(0,0,0,0.08);
+--shadow-hover:0 12px 30px rgba(0,0,0,0.12);
+
+--footer-bg:#1e293b;
+--footer-text:#ffffff;
+
+}
+
+/* ===============================
+   DARK THEME TOKENS
+   =============================== */
+
+body.dark{
+
+--bg:#0f172a;
+--text:#e5e7eb;
+--muted:#cbd5f5;
+
+--nav-bg:#020617;
+--card-bg:#1e293b;
+
+--accent:#60a5fa;
+--accent-2:#a78bfa;
+
+--shadow:0 6px 25px rgba(0,0,0,0.6);
+--shadow-hover:0 14px 35px rgba(0,0,0,0.8);
+
+--footer-bg:#020617;
+--footer-text:#e5e7eb;
+
+}
+
+/* ===============================
+   GLOBAL
+   =============================== */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 font-family:
 "Aptos",
 "Segoe UI",
 -apple-system,
 BlinkMacSystemFont,
 sans-serif;
-transition:background 0.3s,color 0.3s;
+
+transition:background .3s,color .3s,box-shadow .3s;
 }
 
-/* PAGE BACKGROUND */
-
 body{
-background:#f5f5f7;
-color:#334155;
+background:var(--bg);
+color:var(--text);
 line-height:1.6;
 }
 
-/* NAVBAR */
+/* ===============================
+   NAVBAR
+   =============================== */
 
 nav{
 position:sticky;
 top:0;
-background:white;
+background:var(--nav-bg);
 box-shadow:0 2px 10px rgba(0,0,0,0.06);
 padding:12px 8%;
 display:flex;
@@ -48,7 +100,7 @@ z-index:100;
 }
 
 nav strong{
-color:#1e3a8a;
+color:var(--accent);
 font-weight:700;
 }
 
@@ -56,10 +108,8 @@ nav a{
 text-decoration:none;
 margin-left:25px;
 font-weight:500;
-color:#475569;
+color:var(--muted);
 }
-
-/* NAV RIGHT */
 
 .nav-right{
 display:flex;
@@ -67,7 +117,9 @@ align-items:center;
 gap:25px;
 }
 
-/* TOGGLE SWITCH */
+/* ===============================
+   DARK MODE TOGGLE
+   =============================== */
 
 .toggle{
 position:relative;
@@ -99,7 +151,7 @@ left:3px;
 bottom:3px;
 background:white;
 border-radius:50%;
-transition:0.3s;
+transition:.3s;
 }
 
 input:checked + .slider{
@@ -110,7 +162,9 @@ input:checked + .slider:before{
 transform:translateX(22px);
 }
 
-/* HERO */
+/* ===============================
+   HERO
+   =============================== */
 
 .hero{
 padding:20px 8% 100px;
@@ -121,7 +175,7 @@ text-align:center;
 font-size:82px;
 font-weight:800;
 letter-spacing:-2px;
-background:linear-gradient(90deg,#000000,#7c3aed);
+background:linear-gradient(90deg,var(--accent),var(--accent-2));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -129,7 +183,7 @@ background:linear-gradient(90deg,#000000,#7c3aed);
 .hero h2{
 font-size:28px;
 font-weight:600;
-color:#1e293b;
+color:var(--text);
 margin-top:10px;
 }
 
@@ -137,22 +191,28 @@ margin-top:10px;
 max-width:750px;
 margin:25px auto;
 font-size:20px;
-color:#000000;
+color:var(--text);
 }
+
+/* ===============================
+   BUTTON
+   =============================== */
 
 .button{
 display:inline-block;
 margin-top:25px;
 padding:14px 32px;
 border-radius:10px;
-background:linear-gradient(90deg,#2563eb,#7c3aed);
+background:linear-gradient(90deg,var(--accent),var(--accent-2));
 color:white;
 text-decoration:none;
 font-weight:600;
 box-shadow:0 10px 25px rgba(37,99,235,0.25);
 }
 
-/* SECTION */
+/* ===============================
+   SECTIONS
+   =============================== */
 
 .section{
 padding:30px 8%;
@@ -162,10 +222,12 @@ padding:30px 8%;
 text-align:center;
 font-size:40px;
 margin-bottom:50px;
-color:#1e3a8a;
+color:var(--accent);
 }
 
-/* GRID */
+/* ===============================
+   GRID
+   =============================== */
 
 .grid{
 display:grid;
@@ -173,43 +235,48 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
-/* DROP ANIMATION */
+/* ===============================
+   ANIMATION
+   =============================== */
 
 @keyframes drop{
 0%{opacity:0;transform:translateY(-40px);}
 100%{opacity:1;transform:translateY(0);}
 }
 
-/* CARDS */
+/* ===============================
+   CARDS
+   =============================== */
 
 .card{
 padding:32px;
 border-radius:22px;
-background:white;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+background:var(--card-bg);
+box-shadow:var(--shadow);
 opacity:0;
-animation:drop 0.8s ease forwards;
+animation:drop .8s ease forwards;
 animation-delay:1s;
-transition:all .35s ease;
 }
 
 .card:hover{
 transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.12);
+box-shadow:var(--shadow-hover);
 }
 
 .card h3{
-color:#000000;
+color:var(--text);
 margin-bottom:14px;
 font-size:26px;
 }
 
 .card ul{
 padding-left:18px;
-color:#475569;
+color:var(--muted);
 }
 
-/* EXPERIENCE GRID */
+/* ===============================
+   EXPERIENCE
+   =============================== */
 
 .exp-grid{
 display:grid;
@@ -220,28 +287,27 @@ gap:30px;
 .exp-card{
 padding:32px;
 border-radius:22px;
-background:white;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+background:var(--card-bg);
+box-shadow:var(--shadow);
 opacity:0;
-animation:drop 0.9s ease forwards;
+animation:drop .9s ease forwards;
 animation-delay:1s;
-transition:all .35s ease;
 }
 
 .exp-card:hover{
 transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.12);
+box-shadow:var(--shadow-hover);
 }
 
 .exp-card h3{
-color:#2563eb;
+color:var(--accent);
 font-weight:700;
 margin-bottom:6px;
 }
 
 .exp-card span{
 font-size:16px;
-color:#000000;
+color:var(--text);
 display:block;
 margin-bottom:16px;
 font-weight:600;
@@ -249,23 +315,24 @@ font-weight:600;
 
 .exp-card ul{
 padding-left:18px;
-color:#000000;
+color:var(--text);
 font-size:16px;
 line-height:1.6;
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER
+   =============================== */
 
 footer{
 margin-top:80px;
-background:#1e293b;
-color:white;
+background:var(--footer-bg);
+color:var(--footer-text);
 text-align:center;
 padding:60px 20px;
 }
 
 footer h2{
-color:white;
 margin-bottom:20px;
 }
 
@@ -273,40 +340,7 @@ footer p{
 margin:10px 0;
 }
 
-/* DARK MODE */
-
-body.dark{
-background:#0f172a;
-color:#e5e7eb;
-}
-
-body.dark nav{
-background:#020617;
-}
-
-body.dark .card,
-body.dark .exp-card{
-background:#1e293b;
-box-shadow:0 6px 25px rgba(0,0,0,0.5);
-}
-
-body.dark .card h3,
-body.dark .exp-card span,
-body.dark .exp-card ul,
-body.dark .card ul{
-color:#e5e7eb;
-}
-
-body.dark .hero p{
-color:#e5e7eb;
-}
-
-body.dark footer{
-background:#020617;
-}
-
 </style>
-
 </head>
 
 <body>
@@ -397,7 +431,6 @@ and scalable documentation strategies.
 </div>
 
 </div>
-
 </section>
 
 <section id="achievements" class="section">
@@ -427,7 +460,6 @@ and scalable documentation strategies.
 </div>
 
 </div>
-
 </section>
 
 <section id="experience" class="section">
@@ -487,7 +519,6 @@ and scalable documentation strategies.
 </div>
 
 </div>
-
 </section>
 
 <footer id="contact">
