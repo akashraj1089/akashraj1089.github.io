@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Akash Raj | Lead Technical Writer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-font-family:'Inter',sans-serif;
+*{
 margin:0;
-background:linear-gradient(135deg,#0f172a,#020617);
-color:white;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#f8fafc;
+color:#1e293b;
+line-height:1.6;
 }
 
 .container{
@@ -22,88 +30,172 @@ max-width:1200px;
 margin:auto;
 }
 
-header{
-padding:80px 0;
+nav{
+position:sticky;
+top:0;
+background:white;
+padding:18px 0;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:100;
+}
+
+nav .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+color:#334155;
+}
+
+.hero{
+padding:120px 0 80px;
 text-align:center;
 }
 
-header h1{
-font-size:48px;
+.hero h1{
+font-size:52px;
 font-weight:700;
 margin-bottom:10px;
 }
 
-header p{
+.hero p{
 font-size:20px;
-color:#94a3b8;
+color:#64748b;
+max-width:700px;
+margin:auto;
+}
+
+.button{
+margin-top:30px;
+display:inline-block;
+padding:14px 28px;
+background:#2563eb;
+color:white;
+border-radius:10px;
+text-decoration:none;
+font-weight:500;
+}
+
+.section{
+padding:80px 0;
+}
+
+.section h2{
+font-size:36px;
+margin-bottom:40px;
+text-align:center;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-margin-top:40px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
+background:white;
 padding:30px;
-border-radius:20px;
-transition:all .3s ease;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:all .3s;
 }
 
 .card:hover{
 transform:translateY(-8px);
-background:rgba(255,255,255,0.08);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
-h2{
-margin-top:80px;
-font-size:32px;
+.card h3{
+margin-bottom:15px;
 }
 
-ul{
+.card ul{
 padding-left:18px;
-color:#cbd5f5;
+color:#475569;
+}
+
+.timeline{
+max-width:900px;
+margin:auto;
 }
 
 .job{
-margin-top:20px;
-padding:25px;
+background:white;
+padding:30px;
+margin-bottom:25px;
 border-radius:16px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
 }
 
-.job:hover{
-transform:scale(1.02);
+.job h3{
+color:#2563eb;
+}
+
+.job span{
+color:#64748b;
+font-size:14px;
 }
 
 footer{
-margin-top:80px;
-padding:40px;
+padding:60px 0;
 text-align:center;
-color:#94a3b8;
+background:#e2e8f0;
+margin-top:80px;
+}
+
+footer p{
+margin:8px 0;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<nav>
+<div class="container">
+<h3>Akash Raj</h3>
+
+<div>
+<a href="#skills">Skills</a>
+<a href="#achievements">Achievements</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero">
+
 <div class="container">
 
-<header>
-<h1>Akash Raj</h1>
-<p>Lead Technical Writer • Automation • Documentation Strategy</p>
-<p>14+ years delivering enterprise SaaS documentation and automation-driven publishing workflows</p>
-</header>
+<h1>Lead Technical Writer</h1>
+
+<p>
+14+ years delivering enterprise SaaS documentation, automation-driven publishing workflows, 
+and scalable documentation strategies.
+</p>
+
+<a class="button" href="#">Download Resume</a>
+
+</div>
+
+</section>
 
 
-<h2>Skills</h2>
+
+<section id="skills" class="section">
+
+<div class="container">
+
+<h2>Skills & Expertise</h2>
 
 <div class="grid">
 
@@ -113,8 +205,8 @@ color:#94a3b8;
 <li>Product Documentation</li>
 <li>Online Help Systems</li>
 <li>Troubleshooting Guides</li>
-<li>SOP Documentation</li>
 <li>Release Notes</li>
+<li>SOP Documentation</li>
 <li>API Documentation</li>
 </ul>
 </div>
@@ -122,8 +214,8 @@ color:#94a3b8;
 <div class="card">
 <h3>Documentation Strategy</h3>
 <ul>
-<li>Documentation Architecture</li>
 <li>Content Structuring</li>
+<li>Documentation Architecture</li>
 <li>Documentation Governance</li>
 <li>Content Review Boards</li>
 <li>Documentation Lifecycle</li>
@@ -136,7 +228,7 @@ color:#94a3b8;
 <li>PowerShell Publishing Automation</li>
 <li>Python JIRA Extraction Tools</li>
 <li>Docs-as-Code Workflows</li>
-<li>Automation Driven Publishing</li>
+<li>Docusaurus POC</li>
 </ul>
 </div>
 
@@ -155,92 +247,104 @@ color:#94a3b8;
 
 </div>
 
+</div>
+
+</section>
+
+
+
+<section id="achievements" class="section">
+
+<div class="container">
 
 <h2>Key Achievements</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Automation Innovation</h3>
-<p>Automated documentation publishing workflows using PowerShell, significantly reducing manual effort.</p>
+<h3>Publishing Automation</h3>
+<p>Automated RoboHelp publishing workflows reducing manual effort and improving release turnaround.</p>
 </div>
 
 <div class="card">
 <h3>JIRA Automation</h3>
-<p>Built Python tools to automate JIRA data extraction for release note generation and documentation workflows.</p>
+<p>Developed Python tools to extract JIRA data and streamline release note generation.</p>
 </div>
 
 <div class="card">
 <h3>Documentation Governance</h3>
-<p>Established a Content Review Board introducing structured peer-review and documentation governance.</p>
+<p>Established a Content Review Board improving documentation quality and standards.</p>
 </div>
 
 <div class="card">
 <h3>Docs-as-Code</h3>
-<p>Developed a Docs-as-Code POC using Docusaurus, GitHub, and VS Code.</p>
+<p>Built a Docs-as-Code proof-of-concept using GitHub, VS Code, and Docusaurus.</p>
 </div>
 
 </div>
 
+</div>
 
+</section>
+
+
+
+<section id="experience" class="section">
+
+<div class="container">
 
 <h2>Experience</h2>
 
+<div class="timeline">
+
 <div class="job">
 <h3>Vitech Systems</h3>
-<p><strong>Lead Technical Writer | 2021 – Present</strong></p>
-<ul>
-<li>Led documentation strategy for enterprise SaaS insurance platforms.</li>
-<li>Automated RoboHelp publishing workflows reducing manual effort by ~60%.</li>
-<li>Built Python automation tools for JIRA extraction reducing effort by ~80%.</li>
-<li>Standardized documentation architecture based on Microsoft Style Guide.</li>
-<li>Established Content Review Board improving documentation quality.</li>
-</ul>
+<span>Lead Technical Writer | 2021 – Present</span>
+<p>
+Led documentation strategy for enterprise SaaS insurance platforms and built automation tools to reduce manual documentation workflows.
+</p>
 </div>
-
 
 <div class="job">
 <h3>Amphora Software</h3>
-<p><strong>Senior Technical Writer | 2020 – 2021</strong></p>
-<ul>
-<li>Managed documentation lifecycle aligned with product release schedules.</li>
-<li>Created user guides, operational documentation, and release notes.</li>
-<li>Improved documentation consistency with standardized templates.</li>
-</ul>
+<span>Senior Technical Writer | 2020 – 2021</span>
+<p>
+Managed product documentation lifecycle and coordinated documentation deliverables with engineering teams.
+</p>
 </div>
-
 
 <div class="job">
 <h3>ValueLabs</h3>
-<p><strong>Senior Technical Writer | 2018 – 2020</strong></p>
-<ul>
-<li>Led documentation initiatives across IT operations.</li>
-<li>Developed API documentation using Postman.</li>
-<li>Improved knowledge management across departments.</li>
-</ul>
+<span>Senior Technical Writer | 2018 – 2020</span>
+<p>
+Developed enterprise IT documentation and authored API documentation using Postman.
+</p>
 </div>
-
 
 <div class="job">
 <h3>Cyient</h3>
-<p><strong>Senior Design Engineer | 2012 – 2018</strong></p>
-<ul>
-<li>Created documentation for Boeing internal tools.</li>
-<li>Applied Microsoft Style Guide standards.</li>
-<li>Implemented structured authoring using DITA.</li>
-</ul>
+<span>Senior Design Engineer | 2012 – 2018</span>
+<p>
+Produced technical documentation for Boeing internal tools using structured authoring practices.
+</p>
 </div>
 
+</div>
 
-<footer>
+</div>
 
-<p>📞 +91 9866790163</p>
-<p>✉️ Akash.raj1089@gmail.com</p>
+</section>
+
+
+
+<footer id="contact">
+
+<p><strong>Akash Raj</strong></p>
 <p>Hyderabad, Telangana</p>
+<p>Akash.raj1089@gmail.com</p>
+<p>+91 9866790163</p>
 
 </footer>
-
-</div>
 
 </body>
 </html>
