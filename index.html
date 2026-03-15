@@ -1,22 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Akash | Lead Technical Writer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Raj | Lead Technical Writer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 body{
-font-family: Arial;
-margin:40px;
-background:#f4f4f4;
+font-family:'Inter',sans-serif;
+margin:0;
+background:linear-gradient(135deg,#0f172a,#020617);
+color:white;
 }
+
 .container{
-max-width:900px;
+width:90%;
+max-width:1200px;
 margin:auto;
-background:white;
-padding:40px;
-border-radius:10px;
 }
-h1{color:#333}
-.section{margin-top:30px}
+
+header{
+padding:80px 0;
+text-align:center;
+}
+
+header h1{
+font-size:48px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+header p{
+font-size:20px;
+color:#94a3b8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+transition:all .3s ease;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:rgba(255,255,255,0.08);
+}
+
+h2{
+margin-top:80px;
+font-size:32px;
+}
+
+ul{
+padding-left:18px;
+color:#cbd5f5;
+}
+
+.job{
+margin-top:20px;
+padding:25px;
+border-radius:16px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+transition:.3s;
+}
+
+.job:hover{
+transform:scale(1.02);
+}
+
+footer{
+margin-top:80px;
+padding:40px;
+text-align:center;
+color:#94a3b8;
+}
+
 </style>
 </head>
 
@@ -24,50 +96,149 @@ h1{color:#333}
 
 <div class="container">
 
-<h1>Akash</h1>
-<h3>Lead Technical Writer</h3>
+<header>
+<h1>Akash Raj</h1>
+<p>Lead Technical Writer • Automation • Documentation Strategy</p>
+<p>14+ years delivering enterprise SaaS documentation and automation-driven publishing workflows</p>
+</header>
 
-<p>
-Technical writer specializing in SaaS documentation,
-automation workflows, and enterprise insurance platforms.
-</p>
 
-<div class="section">
 <h2>Skills</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Documentation</h3>
+<ul>
+<li>Product Documentation</li>
+<li>Online Help Systems</li>
+<li>Troubleshooting Guides</li>
+<li>SOP Documentation</li>
+<li>Release Notes</li>
+<li>API Documentation</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Documentation Strategy</h3>
+<ul>
+<li>Documentation Architecture</li>
+<li>Content Structuring</li>
+<li>Documentation Governance</li>
+<li>Content Review Boards</li>
+<li>Documentation Lifecycle</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Automation</h3>
+<ul>
+<li>PowerShell Publishing Automation</li>
+<li>Python JIRA Extraction Tools</li>
+<li>Docs-as-Code Workflows</li>
+<li>Automation Driven Publishing</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Tools</h3>
 <ul>
 <li>Adobe RoboHelp</li>
 <li>Confluence</li>
-<li>Python Automation</li>
-<li>PowerShell</li>
 <li>JIRA</li>
 <li>GitHub</li>
+<li>VS Code</li>
+<li>Snagit</li>
+<li>Visio</li>
 </ul>
 </div>
 
-<div class="section">
+</div>
+
+
+<h2>Key Achievements</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Automation Innovation</h3>
+<p>Automated documentation publishing workflows using PowerShell, significantly reducing manual effort.</p>
+</div>
+
+<div class="card">
+<h3>JIRA Automation</h3>
+<p>Built Python tools to automate JIRA data extraction for release note generation and documentation workflows.</p>
+</div>
+
+<div class="card">
+<h3>Documentation Governance</h3>
+<p>Established a Content Review Board introducing structured peer-review and documentation governance.</p>
+</div>
+
+<div class="card">
+<h3>Docs-as-Code</h3>
+<p>Developed a Docs-as-Code POC using Docusaurus, GitHub, and VS Code.</p>
+</div>
+
+</div>
+
+
+
 <h2>Experience</h2>
-<p>Lead Technical Writer – SaaS Insurance Platforms</p>
+
+<div class="job">
+<h3>Vitech Systems</h3>
+<p><strong>Lead Technical Writer | 2021 – Present</strong></p>
 <ul>
-<li>Built Python automation tools for JIRA extraction</li>
-<li>Automated RoboHelp publishing using PowerShell</li>
-<li>Defined documentation standards and TOC frameworks</li>
+<li>Led documentation strategy for enterprise SaaS insurance platforms.</li>
+<li>Automated RoboHelp publishing workflows reducing manual effort by ~60%.</li>
+<li>Built Python automation tools for JIRA extraction reducing effort by ~80%.</li>
+<li>Standardized documentation architecture based on Microsoft Style Guide.</li>
+<li>Established Content Review Board improving documentation quality.</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Projects</h2>
+
+<div class="job">
+<h3>Amphora Software</h3>
+<p><strong>Senior Technical Writer | 2020 – 2021</strong></p>
 <ul>
-<li>JIRA Story & Epic Export Tool</li>
-<li>RoboHelp Publishing Automation</li>
-<li>Documentation Standards Framework</li>
+<li>Managed documentation lifecycle aligned with product release schedules.</li>
+<li>Created user guides, operational documentation, and release notes.</li>
+<li>Improved documentation consistency with standardized templates.</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Contact</h2>
-<p>Email: yourmail@email.com</p>
-<p>LinkedIn: linkedin.com/in/yourname</p>
+
+<div class="job">
+<h3>ValueLabs</h3>
+<p><strong>Senior Technical Writer | 2018 – 2020</strong></p>
+<ul>
+<li>Led documentation initiatives across IT operations.</li>
+<li>Developed API documentation using Postman.</li>
+<li>Improved knowledge management across departments.</li>
+</ul>
 </div>
+
+
+<div class="job">
+<h3>Cyient</h3>
+<p><strong>Senior Design Engineer | 2012 – 2018</strong></p>
+<ul>
+<li>Created documentation for Boeing internal tools.</li>
+<li>Applied Microsoft Style Guide standards.</li>
+<li>Implemented structured authoring using DITA.</li>
+</ul>
+</div>
+
+
+<footer>
+
+<p>📞 +91 9866790163</p>
+<p>✉️ Akash.raj1089@gmail.com</p>
+<p>Hyderabad, Telangana</p>
+
+</footer>
 
 </div>
 
