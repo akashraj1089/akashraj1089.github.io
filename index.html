@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Akash Raj | Lead Technical Writer</title>
 
 <style>
@@ -22,7 +23,7 @@ THEME VARIABLES
 --card-bg:#ffffff;
 
 --accent:#24588d;
---accent-2:#7c3aed;
+--accent2:#7c3aed;
 
 --shadow:0 6px 20px rgba(0,0,0,0.08);
 --shadow-hover:0 12px 30px rgba(0,0,0,0.12);
@@ -43,7 +44,7 @@ body.dark{
 --card-bg:#1e293b;
 
 --accent:#60a5fa;
---accent-2:#a78bfa;
+--accent2:#a78bfa;
 
 --shadow:0 6px 25px rgba(0,0,0,0.6);
 --shadow-hover:0 14px 35px rgba(0,0,0,0.8);
@@ -174,7 +175,8 @@ transform:translateX(-50%);
 font-size:82px;
 font-weight:800;
 letter-spacing:-2px;
-background:linear-gradient(90deg,var(--accent),var(--accent-2));
+
+background:linear-gradient(90deg,var(--accent),var(--accent2));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -188,19 +190,6 @@ margin-top:10px;
 max-width:750px;
 margin:25px auto;
 font-size:20px;
-}
-
-/* BUTTON */
-
-.button{
-display:inline-block;
-margin-top:25px;
-padding:14px 32px;
-border-radius:10px;
-background:linear-gradient(90deg,var(--accent),var(--accent-2));
-color:white;
-text-decoration:none;
-font-weight:600;
 }
 
 /* SECTION */
@@ -231,6 +220,8 @@ padding:32px;
 border-radius:22px;
 background:var(--card-bg);
 box-shadow:var(--shadow);
+position:relative;
+overflow:hidden;
 }
 
 .card:hover{
@@ -238,14 +229,45 @@ transform:translateY(-6px);
 box-shadow:var(--shadow-hover);
 }
 
-.card h3{
-margin-bottom:14px;
-font-size:26px;
+/* Premium glow */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+top:-60px;
+right:-60px;
+
+width:200px;
+height:200px;
+
+background:radial-gradient(circle,
+rgba(124,58,237,0.15),
+transparent 70%);
+
 }
 
-.card ul{
-padding-left:18px;
+/* METRICS */
+
+.metric{
+
+font-size:64px;
+font-weight:900;
+margin-bottom:6px;
+
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.metric-label{
+font-size:13px;
+letter-spacing:.6px;
+text-transform:uppercase;
 color:var(--muted);
+margin-bottom:14px;
 }
 
 /* EXPERIENCE */
@@ -261,11 +283,6 @@ padding:32px;
 border-radius:22px;
 background:var(--card-bg);
 box-shadow:var(--shadow);
-}
-
-.exp-card:hover{
-transform:translateY(-6px);
-box-shadow:var(--shadow-hover);
 }
 
 .exp-card h3{
@@ -288,76 +305,31 @@ line-height:1.6;
 /* FOOTER */
 
 footer{
-
 margin-top:80px;
-
 background:linear-gradient(
 180deg,
 var(--footer-bg),
 #020617
 );
-
 color:white;
-
 padding:70px 8% 30px;
-
 }
 
 .footer-container{
-
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
-
 max-width:1000px;
 margin:auto;
-
-}
-
-.footer-left h3{
-font-size:22px;
-margin-bottom:10px;
-}
-
-.footer-left p{
-color:rgba(255,255,255,0.85);
-max-width:420px;
-}
-
-.footer-right h4{
-margin-bottom:12px;
-}
-
-.footer-right p{
-margin:8px 0;
-color:rgba(255,255,255,0.9);
 }
 
 .footer-bottom{
-
 border-top:1px solid rgba(255,255,255,0.15);
-
 margin-top:40px;
 padding-top:20px;
-
 text-align:center;
 font-size:14px;
-
 color:rgba(255,255,255,0.7);
-
-}
-
-@media (max-width:700px){
-
-.footer-container{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.footer-left p{
-margin:auto;
-}
-
 }
 
 </style>
@@ -385,19 +357,20 @@ margin:auto;
 
 </nav>
 
+
 <section class="hero">
 
 <h1>Akash Raj</h1>
 <h2>Lead Technical Writer</h2>
 
 <p>
-14+ years delivering enterprise SaaS documentation, automation-driven publishing workflows,
+14+ years delivering enterprise SaaS documentation,
+automation-driven publishing workflows,
 and scalable documentation strategies.
 </p>
 
-<a class="button">Download Resume</a>
-
 </section>
+
 
 <section id="skills" class="section">
 
@@ -453,6 +426,7 @@ and scalable documentation strategies.
 </div>
 </section>
 
+
 <section id="achievements" class="section">
 
 <h2>Key Achievements</h2>
@@ -460,27 +434,37 @@ and scalable documentation strategies.
 <div class="grid">
 
 <div class="card">
+<div class="metric" data-target="60" data-type="percent">0</div>
+<div class="metric-label">Publishing Effort Reduced</div>
 <h3>Publishing Automation</h3>
-<p>Automated documentation publishing workflows reducing manual effort.</p>
+<p>Automated documentation publishing workflows using PowerShell reducing manual effort.</p>
 </div>
 
 <div class="card">
+<div class="metric" data-target="80" data-type="percent">0</div>
+<div class="metric-label">Manual Work Reduced</div>
 <h3>JIRA Automation</h3>
-<p>Python automation for JIRA data extraction and release note generation.</p>
+<p>Developed Python tools to automate JIRA data extraction for documentation workflows.</p>
 </div>
 
 <div class="card">
+<div class="metric" data-target="3" data-type="multiplier">0</div>
+<div class="metric-label">Faster Review Cycles</div>
 <h3>Documentation Governance</h3>
-<p>Established content review boards improving documentation quality.</p>
+<p>Established a Content Review Board improving documentation quality.</p>
 </div>
 
 <div class="card">
+<div class="metric" data-target="2" data-type="multiplier">0</div>
+<div class="metric-label">Faster Documentation Delivery</div>
 <h3>Docs-as-Code</h3>
-<p>Built Docs-as-Code proof of concept using GitHub and Docusaurus.</p>
+<p>Built a Docs-as-Code proof of concept using GitHub, VS Code and Docusaurus.</p>
 </div>
 
 </div>
+
 </section>
+
 
 <section id="experience" class="section">
 
@@ -542,61 +526,71 @@ and scalable documentation strategies.
 
 </section>
 
+
 <footer id="contact">
 
 <div class="footer-container">
 
-<div class="footer-left">
-
+<div>
 <h3>Akash Raj</h3>
-
 <p>
 Lead Technical Writer specializing in SaaS documentation strategy,
 automation workflows, and scalable developer documentation.
 </p>
-
 </div>
 
-<div class="footer-right">
-
+<div>
 <h4>Contact</h4>
-
-<p>📍 Hyderabad, Telangana</p>
-<p>✉️ Akash.raj1089@gmail.com</p>
-<p>📞 +91 9866790163</p>
-
+<p>Hyderabad, Telangana</p>
+<p>Akash.raj1089@gmail.com</p>
+<p>+91 9866790163</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-
-<p>© 2026 Akash Raj — Documentation Strategy • Automation • Docs-as-Code</p>
-
+© 2026 Akash Raj — Documentation Strategy • Automation • Docs-as-Code
 </div>
 
 </footer>
 
+
 <script>
 
-const toggle=document.getElementById("themeToggle");
+/* METRIC COUNTER FIX */
 
-if(localStorage.getItem("theme")==="dark"){
-document.body.classList.add("dark");
-toggle.checked=true;
-}
+function animateCounter(counter){
 
-toggle.addEventListener("change",()=>{
+const target=parseInt(counter.dataset.target);
+const type=counter.dataset.type;
 
-if(toggle.checked){
-document.body.classList.add("dark");
-localStorage.setItem("theme","dark");
+let count=0;
+
+const increment=target<=5?1:Math.ceil(target/40);
+
+function update(){
+
+count+=increment;
+
+if(count<target){
+
+counter.textContent=type==="percent"?count+"%":count+"×";
+
+requestAnimationFrame(update);
+
 }else{
-document.body.classList.remove("dark");
-localStorage.setItem("theme","light");
+
+counter.textContent=type==="percent"?target+"%":target+"×";
+
 }
 
-});
+}
+
+update();
+
+}
+
+document.querySelectorAll(".metric").forEach(el=>animateCounter(el));
 
 </script>
 
