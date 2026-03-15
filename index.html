@@ -8,7 +8,7 @@
 
 <title>Akash Raj | Lead Technical Writer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,12 +16,22 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+
+/* APTOS FONT STACK */
+
+font-family:
+"Aptos",
+"Segoe UI",
+-apple-system,
+BlinkMacSystemFont,
+sans-serif;
 }
 
+/* PAGE BACKGROUND */
+
 body{
-background:linear-gradient(180deg,#f8fafc,#eef2ff);
-color:#0f172a;
+background:#f5f5f7;
+color:#334155;
 line-height:1.6;
 }
 
@@ -31,7 +41,7 @@ nav{
 position:sticky;
 top:0;
 background:white;
-box-shadow:0 4px 20px rgba(0,0,0,0.05);
+box-shadow:0 2px 10px rgba(0,0,0,0.06);
 padding:16px 8%;
 display:flex;
 justify-content:space-between;
@@ -39,11 +49,16 @@ align-items:center;
 z-index:100;
 }
 
+nav strong{
+color:#1e3a8a;
+font-weight:700;
+}
+
 nav a{
 text-decoration:none;
 margin-left:25px;
 font-weight:500;
-color:#334155;
+color:#475569;
 }
 
 /* HERO */
@@ -54,18 +69,18 @@ text-align:center;
 }
 
 .hero h1{
-font-size:72px;
+font-size:82px;
 font-weight:800;
 letter-spacing:-2px;
-background:linear-gradient(90deg,#2563eb,#7c3aed);
+background:linear-gradient(90deg,#000000,#7c3aed);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero h2{
 font-size:28px;
-font-weight:500;
-color:#334155;
+font-weight:600;
+color:#1e293b;
 margin-top:10px;
 }
 
@@ -73,7 +88,7 @@ margin-top:10px;
 max-width:750px;
 margin:25px auto;
 font-size:20px;
-color:#64748b;
+color:#000000;
 }
 
 .button{
@@ -98,6 +113,7 @@ padding:90px 8%;
 text-align:center;
 font-size:40px;
 margin-bottom:50px;
+color:#1e3a8a;
 }
 
 /* GRID */
@@ -111,46 +127,38 @@ gap:30px;
 /* DROP ANIMATION */
 
 @keyframes drop{
-
 0%{
 opacity:0;
 transform:translateY(-40px);
 }
-
 100%{
 opacity:1;
 transform:translateY(0);
 }
-
 }
 
-/* CARDS */
+/* APPLE STYLE CARD */
 
 .card{
 padding:32px;
-border-radius:18px;
+border-radius:22px;
 background:white;
-box-shadow:0 20px 40px rgba(0,0,0,0.06);
-position:relative;
-overflow:hidden;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 opacity:0;
 animation:drop 0.8s ease forwards;
 animation-delay:1s;
-}
-
-.card:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:linear-gradient(90deg,#2563eb,#7c3aed);
+transition:all .35s ease;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 30px 60px rgba(0,0,0,0.1);
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card h3{
+color:#000000;
+margin-bottom:14px;
+font-size:26px;
 }
 
 .card ul{
@@ -167,50 +175,39 @@ gap:30px;
 }
 
 .exp-card{
-background:#ffffff;
-border-radius:18px;
 padding:32px;
-box-shadow:0 20px 50px rgba(0,0,0,0.12);
-position:relative;
-border:1px solid rgba(0,0,0,0.05);
+border-radius:22px;
+background:white;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 opacity:0;
 animation:drop 0.9s ease forwards;
 animation-delay:1s;
-}
-
-.exp-card:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:5px;
-background:linear-gradient(90deg,#2563eb,#7c3aed);
+transition:all .35s ease;
 }
 
 .exp-card:hover{
-transform:translateY(-10px);
-box-shadow:0 30px 70px rgba(0,0,0,0.18);
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 .exp-card h3{
-color:#1e40af;
+color:#2563eb;
 font-weight:700;
 margin-bottom:6px;
 }
 
 .exp-card span{
-font-size:14px;
-color:#475569;
+font-size:16px;
+color:#000000   ;
 display:block;
 margin-bottom:16px;
-font-weight:500;
+font-weight:600;
 }
 
 .exp-card ul{
 padding-left:18px;
-color:#334155;
-font-size:15px;
+color:#000000;
+font-size:16px;
 line-height:1.6;
 }
 
@@ -218,10 +215,15 @@ line-height:1.6;
 
 footer{
 margin-top:80px;
-background:#0f172a;
+background:#1e293b;
 color:white;
 text-align:center;
 padding:60px 20px;
+}
+
+footer h2{
+color:white;
+margin-bottom:20px;
 }
 
 footer p{
@@ -358,10 +360,8 @@ and scalable documentation strategies.
 <div class="exp-grid">
 
 <div class="exp-card">
-
 <h3>Vitech Systems</h3>
 <span>Lead Technical Writer | 2021 – Present</span>
-
 <ul>
 <li>Led documentation strategy for enterprise SaaS insurance platforms.</li>
 <li>Developed PowerShell automation reducing publishing effort ~60%.</li>
@@ -371,14 +371,11 @@ and scalable documentation strategies.
 <li>Designed documentation lifecycle aligned with releases.</li>
 <li>Mentored technical writers and improved authoring standards.</li>
 </ul>
-
 </div>
 
 <div class="exp-card">
-
 <h3>Amphora Software</h3>
 <span>Senior Technical Writer | 2020 – 2021</span>
-
 <ul>
 <li>Led documentation lifecycle aligned with product releases.</li>
 <li>Created user guides and operational documentation.</li>
@@ -386,14 +383,11 @@ and scalable documentation strategies.
 <li>Standardized documentation templates and repositories.</li>
 <li>Improved usability through documentation feedback.</li>
 </ul>
-
 </div>
 
 <div class="exp-card">
-
 <h3>ValueLabs</h3>
 <span>Senior Technical Writer | 2018 – 2020</span>
-
 <ul>
 <li>Reported directly to CIO of American Credit Acceptance.</li>
 <li>Led documentation initiatives across IT teams.</li>
@@ -401,14 +395,11 @@ and scalable documentation strategies.
 <li>Authored API documentation using Postman.</li>
 <li>Improved SOP and knowledge management documentation.</li>
 </ul>
-
 </div>
 
 <div class="exp-card">
-
 <h3>Cyient</h3>
 <span>Senior Design Engineer | 2012 – 2018</span>
-
 <ul>
 <li>Produced user manuals and online help systems.</li>
 <li>Created documentation for Boeing internal tools.</li>
@@ -416,7 +407,6 @@ and scalable documentation strategies.
 <li>Modernized legacy documentation.</li>
 <li>Implemented structured authoring using DITA.</li>
 </ul>
-
 </div>
 
 </div>
