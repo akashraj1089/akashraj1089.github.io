@@ -16,15 +16,13 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-
-/* APTOS FONT STACK */
-
 font-family:
 "Aptos",
 "Segoe UI",
 -apple-system,
 BlinkMacSystemFont,
 sans-serif;
+transition:background 0.3s,color 0.3s;
 }
 
 /* PAGE BACKGROUND */
@@ -59,6 +57,57 @@ text-decoration:none;
 margin-left:25px;
 font-weight:500;
 color:#475569;
+}
+
+/* NAV RIGHT */
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+/* TOGGLE SWITCH */
+
+.toggle{
+position:relative;
+width:46px;
+height:24px;
+}
+
+.toggle input{
+display:none;
+}
+
+.slider{
+position:absolute;
+cursor:pointer;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:#cbd5f5;
+border-radius:24px;
+}
+
+.slider:before{
+position:absolute;
+content:"";
+height:18px;
+width:18px;
+left:3px;
+bottom:3px;
+background:white;
+border-radius:50%;
+transition:0.3s;
+}
+
+input:checked + .slider{
+background:#2563eb;
+}
+
+input:checked + .slider:before{
+transform:translateX(22px);
 }
 
 /* HERO */
@@ -127,17 +176,11 @@ gap:30px;
 /* DROP ANIMATION */
 
 @keyframes drop{
-0%{
-opacity:0;
-transform:translateY(-40px);
-}
-100%{
-opacity:1;
-transform:translateY(0);
-}
+0%{opacity:0;transform:translateY(-40px);}
+100%{opacity:1;transform:translateY(0);}
 }
 
-/* APPLE STYLE CARD */
+/* CARDS */
 
 .card{
 padding:32px;
@@ -198,7 +241,7 @@ margin-bottom:6px;
 
 .exp-card span{
 font-size:16px;
-color:#000000   ;
+color:#000000;
 display:block;
 margin-bottom:16px;
 font-weight:600;
@@ -230,6 +273,38 @@ footer p{
 margin:10px 0;
 }
 
+/* DARK MODE */
+
+body.dark{
+background:#0f172a;
+color:#e5e7eb;
+}
+
+body.dark nav{
+background:#020617;
+}
+
+body.dark .card,
+body.dark .exp-card{
+background:#1e293b;
+box-shadow:0 6px 25px rgba(0,0,0,0.5);
+}
+
+body.dark .card h3,
+body.dark .exp-card span,
+body.dark .exp-card ul,
+body.dark .card ul{
+color:#e5e7eb;
+}
+
+body.dark .hero p{
+color:#e5e7eb;
+}
+
+body.dark footer{
+background:#020617;
+}
+
 </style>
 
 </head>
@@ -240,20 +315,25 @@ margin:10px 0;
 
 <div><strong>Akash Raj</strong></div>
 
-<div>
+<div class="nav-right">
+
 <a href="#skills">Skills</a>
 <a href="#achievements">Achievements</a>
 <a href="#experience">Experience</a>
 <a href="#contact">Contact</a>
+
+<label class="toggle">
+<input type="checkbox" id="themeToggle">
+<span class="slider"></span>
+</label>
+
 </div>
 
 </nav>
 
-
 <section class="hero">
 
 <h1>Akash Raj</h1>
-
 <h2>Lead Technical Writer</h2>
 
 <p>
@@ -264,7 +344,6 @@ and scalable documentation strategies.
 <a class="button">Download Resume</a>
 
 </section>
-
 
 <section id="skills" class="section">
 
@@ -321,7 +400,6 @@ and scalable documentation strategies.
 
 </section>
 
-
 <section id="achievements" class="section">
 
 <h2>Key Achievements</h2>
@@ -351,7 +429,6 @@ and scalable documentation strategies.
 </div>
 
 </section>
-
 
 <section id="experience" class="section">
 
@@ -413,17 +490,38 @@ and scalable documentation strategies.
 
 </section>
 
-
 <footer id="contact">
 
 <h2>Contact</h2>
-
 <p>Akash Raj</p>
 <p>Hyderabad, Telangana</p>
 <p>Akash.raj1089@gmail.com</p>
 <p>+91 9866790163</p>
 
 </footer>
+
+<script>
+
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme") === "dark"){
+document.body.classList.add("dark");
+toggle.checked = true;
+}
+
+toggle.addEventListener("change", () => {
+
+if(toggle.checked){
+document.body.classList.add("dark");
+localStorage.setItem("theme","dark");
+}else{
+document.body.classList.remove("dark");
+localStorage.setItem("theme","light");
+}
+
+});
+
+</script>
 
 </body>
 </html>
