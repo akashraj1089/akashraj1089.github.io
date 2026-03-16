@@ -170,12 +170,23 @@ margin:25px auto;
 font-size:20px;
 }
 
-/* CTA BUTTON */
+/* TECH STACK */
+
+.stack{
+margin-top:10px;
+font-size:15px;
+color:var(--muted);
+}
+
+/* BUTTONS */
 
 .button{
 display:inline-block;
 margin-top:35px;
 padding:16px 36px;
+min-width:220px;
+
+text-align:center;
 
 background:var(--accent);
 color:white;
@@ -188,12 +199,25 @@ border-radius:12px;
 
 box-shadow:0 10px 25px rgba(0,0,0,0.18);
 
-transition:transform .25s ease, box-shadow .25s ease;
+transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
 }
 
 .button:hover{
 transform:translateY(-3px);
 box-shadow:0 18px 35px rgba(0,0,0,0.25);
+background:#1d4672;
+}
+
+.secondary{
+background:transparent;
+color:var(--accent);
+border:2px solid var(--accent);
+margin-left:12px;
+}
+
+.secondary:hover{
+background:var(--accent);
+color:white;
 }
 
 /* SECTION */
@@ -355,8 +379,16 @@ automation-driven publishing workflows,
 and scalable documentation strategies.
 </p>
 
+<p class="stack">
+Adobe RoboHelp • PowerShell Automation • Python • Docs-as-Code • SaaS Documentation
+</p>
+
 <a class="button" href="Akash_Raj_Resume.pdf" download>
 Download Resume (PDF)
+</a>
+
+<a class="button secondary" href="https://www.linkedin.com/in/akash-raj-521990126/" target="_blank" rel="noopener">
+View LinkedIn Profile
 </a>
 
 </section>
@@ -416,6 +448,8 @@ Download Resume (PDF)
 
 </section>
 
+<!-- KEY ACHIEVEMENTS -->
+
 <section id="achievements" class="section">
 
 <h2>Key Achievements</h2>
@@ -453,6 +487,8 @@ Download Resume (PDF)
 </div>
 
 </section>
+
+<!-- EXPERIENCE -->
 
 <section id="experience" class="section">
 
