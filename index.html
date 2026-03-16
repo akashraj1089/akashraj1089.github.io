@@ -15,41 +15,29 @@
 /* ============================= */
 
 :root{
-
 --bg:#f5f7fb;
 --text:#1e293b;
 --muted:#475569;
-
 --nav-bg:#ffffff;
 --card-bg:#ffffff;
-
 --accent:#24588d;
-
 --shadow:0 10px 30px rgba(0,0,0,0.08);
 --shadow-hover:0 25px 50px rgba(0,0,0,0.18);
-
 --footer-bg:#1e293b;
-
 }
 
 /* DARK MODE */
 
 body.dark{
-
 --bg:#0f172a;
 --text:#e5e7eb;
 --muted:#94a3b8;
-
 --nav-bg:#020617;
 --card-bg:#1e293b;
-
 --accent:#60a5fa;
-
 --shadow:0 10px 30px rgba(0,0,0,0.6);
 --shadow-hover:0 25px 50px rgba(0,0,0,0.9);
-
 --footer-bg:#020617;
-
 }
 
 /* ============================= */
@@ -60,14 +48,12 @@ body.dark{
 margin:0;
 padding:0;
 box-sizing:border-box;
-
 font-family:
 "Aptos",
 "Segoe UI",
 -apple-system,
 BlinkMacSystemFont,
 sans-serif;
-
 }
 
 html{
@@ -110,12 +96,10 @@ font-size:18px;
 }
 
 nav a{
-
 text-decoration:none;
 margin-left:26px;
 color:var(--muted);
 font-weight:500;
-
 }
 
 nav a:hover{
@@ -123,11 +107,9 @@ color:var(--accent);
 }
 
 .nav-right{
-
 display:flex;
 align-items:center;
 gap:26px;
-
 }
 
 /* ============================= */
@@ -145,36 +127,26 @@ display:none;
 }
 
 .slider{
-
 position:absolute;
 cursor:pointer;
-
 top:0;
 left:0;
 right:0;
 bottom:0;
-
 background:#cbd5f5;
 border-radius:24px;
-
 }
 
 .slider:before{
-
 content:"";
 position:absolute;
-
 height:18px;
 width:18px;
-
 left:3px;
 bottom:3px;
-
 background:white;
 border-radius:50%;
-
 transition:.3s;
-
 }
 
 input:checked + .slider{
@@ -190,51 +162,35 @@ transform:translateX(22px);
 /* ============================= */
 
 .hero{
-
 padding:120px 8% 110px;
-
 text-align:center;
-
 }
 
 .hero h1{
-
 font-size:82px;
 font-weight:800;
 letter-spacing:-2px;
-
 color:var(--accent);
-
 }
 
 .hero h2{
-
 font-size:28px;
 margin-top:8px;
-
 }
 
 .hero p{
-
 max-width:760px;
-
 margin:28px auto;
-
 font-size:20px;
 color:var(--muted);
-
 }
 
 .hero-buttons{
-
 margin-top:40px;
-
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-
 gap:14px;
-
 }
 
 /* ============================= */
@@ -242,50 +198,33 @@ gap:14px;
 /* ============================= */
 
 .button{
-
 padding:16px 34px;
-
 min-width:220px;
-
 text-align:center;
-
 background:var(--accent);
 color:white;
-
 text-decoration:none;
 font-weight:600;
 font-size:16px;
-
 border-radius:12px;
-
 box-shadow:0 12px 28px rgba(0,0,0,0.18);
-
 transition:all .25s ease;
-
 }
 
 .button:hover{
-
 transform:translateY(-4px);
-
 box-shadow:0 20px 40px rgba(0,0,0,0.3);
-
 }
 
 .secondary{
-
 background:transparent;
 color:var(--accent);
-
 border:2px solid var(--accent);
-
 }
 
 .secondary:hover{
-
 background:var(--accent);
 color:white;
-
 }
 
 /* ============================= */
@@ -297,12 +236,10 @@ padding:70px 8%;
 }
 
 .section h2{
-
 text-align:center;
 font-size:40px;
 margin-bottom:50px;
 color:var(--accent);
-
 }
 
 /* ============================= */
@@ -310,11 +247,9 @@ color:var(--accent);
 /* ============================= */
 
 .grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:32px;
-
 }
 
 /* ============================= */
@@ -322,25 +257,16 @@ gap:32px;
 /* ============================= */
 
 .card{
-
 padding:34px;
-
 border-radius:20px;
-
 background:var(--card-bg);
-
 box-shadow:var(--shadow);
-
 transition:all .25s ease;
-
 }
 
 .card:hover{
-
 transform:translateY(-6px);
-
 box-shadow:var(--shadow-hover);
-
 }
 
 .card h3{
@@ -358,23 +284,18 @@ color:var(--muted);
 /* ============================= */
 
 .metric{
-
 font-size:54px;
 font-weight:800;
 margin-bottom:6px;
 color:var(--accent);
-
 }
 
 .metric-label{
-
 font-size:12px;
 text-transform:uppercase;
 letter-spacing:.6px;
-
 color:var(--muted);
 margin-bottom:12px;
-
 }
 
 /* ============================= */
@@ -382,57 +303,42 @@ margin-bottom:12px;
 /* ============================= */
 
 .exp-grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-
 }
 
 .exp-card{
-
 padding:32px;
-
 border-radius:20px;
-
 background:var(--card-bg);
-
 box-shadow:var(--shadow);
-
 transition:all .25s ease;
-
 }
 
 .exp-card:hover{
-
 transform:translateY(-6px);
-
 box-shadow:var(--shadow-hover);
-
 }
 
-/* Company Name — BLACK like Publishing Automation */
+/* COMPANY NAME */
 
 .exp-company{
-
 font-size:24px;
 font-weight:700;
 color:#000;
-
+margin-bottom:10px;
 }
 
-/* Role — same style as metric label */
+/* ROLE */
 
 .exp-role{
-
-font-size:12px;
+font-size:13px;
 text-transform:uppercase;
-letter-spacing:.6px;
+letter-spacing:.7px;
 color:var(--muted);
-
-margin-bottom:16px;
+margin-bottom:18px;
 font-weight:600;
-
 }
 
 body.dark .exp-company{
@@ -448,36 +354,25 @@ padding-left:18px;
 /* ============================= */
 
 footer{
-
 margin-top:80px;
-
 background:var(--footer-bg);
-
 color:white;
-
 padding:60px 8%;
-
 }
 
 .footer-container{
-
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
-
 max-width:1000px;
 margin:auto;
-
 }
 
 .footer-bottom{
-
 margin-top:40px;
-
 text-align:center;
 font-size:14px;
 opacity:.7;
-
 }
 
 </style>
@@ -541,140 +436,46 @@ View LinkedIn
 <div class="grid">
 
 <div class="card">
-
 <h3>Documentation</h3>
-
 <ul>
 <li>Product Documentation</li>
 <li>Online Help Systems</li>
 <li>Troubleshooting Guides</li>
 <li>Release Notes</li>
 <li>API Documentation</li>
-
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Documentation Strategy</h3>
-
 <ul>
-
 <li>Documentation Architecture</li>
 <li>Content Governance</li>
 <li>Content Review Board</li>
 <li>Delivery Planning Coordination</li>
 <li>Docs-as-Code Approach</li>
-
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Automation</h3>
-
 <ul>
-
 <li>Publishing Automation - Powershell</li>
-<li>Mainaternace Release Notes generation Automated - Python</li>
+<li>Maintenance Release Notes Automation - Python</li>
 <li>Documentation Workflow Automation</li>
-
-
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Tools</h3>
-
 <ul>
-
 <li>Adobe RoboHelp</li>
 <li>Confluence</li>
 <li>JIRA</li>
 <li>GitHub</li>
 <li>VS Code</li>
 <li>Snagit</li>
-
 </ul>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="achievements" class="section">
-
-<h2>Key Achievements</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="metric">60%</div>
-
-<div class="metric-label">
-Publishing Effort Reduced
-</div>
-
-<h3>Publishing Automation</h3>
-
-<p>
-Automated RoboHelp documentation publishing workflows using PowerShell, significantly reducing manual publishing effort.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="metric">80%</div>
-
-<div class="metric-label">
-Manual Work Reduced
-</div>
-
-<h3>JIRA Automation</h3>
-
-<p>
-Developed a Python automation tool to extract JIRA data to automate the generation of maintenance release notes.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="metric">3×</div>
-
-<div class="metric-label">
-Documentation Gaps Reduction
-</div>
-
-<h3>Documentation Governance</h3>
-
-<p>
-Established a Content Review Board to streamline peer reviews, enforce documentation standards, and improve cross-team collaboration.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="metric">2×</div>
-
-<div class="metric-label">
-Faster Delivery and Improved Collaboration
-</div>
-
-<h3>Docs-as-Code</h3>
-
-<p>
-Implemented a Docs-as-Code workflow using GitHub and Docusaurus to enable version control, engineering team collaboration, and scalable documentation publishing.
-</p>
-
 </div>
 
 </div>
@@ -688,81 +489,49 @@ Implemented a Docs-as-Code workflow using GitHub and Docusaurus to enable versio
 <div class="exp-grid">
 
 <div class="exp-card">
-
 <div class="exp-company">Vitech Systems (acquired by Majesco)</div>
-
-<div class="exp-role">
-Lead Technical Writer | 2021 – Present
-</div>
-
+<div class="exp-role">Lead Technical Writer | 2021 – Present</div>
 <ul>
-
 <li>Led documentation strategy for enterprise SaaS insurance platforms.</li>
 <li>Developed PowerShell automation reducing publishing effort ~60%.</li>
 <li>Built Python automation reducing release note effort ~80%.</li>
 <li>Standardized documentation architecture across platforms.</li>
 <li>Established Content Review Board improving documentation quality.</li>
 <li>Mentored writers and improved authoring standards.</li>
-
 </ul>
-
 </div>
 
 <div class="exp-card">
-
 <div class="exp-company">Amphora Software</div>
-
-<div class="exp-role">
-Senior Technical Writer | 2020 – 2021
-</div>
-
+<div class="exp-role">Senior Technical Writer | 2020 – 2021</div>
 <ul>
-
 <li>Managed documentation lifecycle aligned with product releases.</li>
 <li>Developed user guides and operational documentation.</li>
 <li>Collaborated with product managers and engineering teams.</li>
 <li>Standardized documentation templates.</li>
-
 </ul>
-
 </div>
 
 <div class="exp-card">
-
 <div class="exp-company">ValueLabs</div>
-
-<div class="exp-role">
-Senior Technical Writer | 2018 – 2020
-</div>
-
+<div class="exp-role">Senior Technical Writer | 2018 – 2020</div>
 <ul>
-
 <li>Reported directly to CIO of American Credit Acceptance.</li>
 <li>Led enterprise IT documentation initiatives.</li>
 <li>Authored API documentation using Postman.</li>
 <li>Improved knowledge management documentation.</li>
-
 </ul>
-
 </div>
 
 <div class="exp-card">
-
 <div class="exp-company">Cyient</div>
-
-<div class="exp-role">
-Senior Design Engineer | 2012 – 2018
-</div>
-
+<div class="exp-role">Senior Design Engineer | 2012 – 2018</div>
 <ul>
-
 <li>Produced user manuals and online help systems.</li>
 <li>Created documentation for Boeing internal tools.</li>
 <li>Applied Microsoft Style Guide standards.</li>
 <li>Implemented structured authoring using DITA.</li>
-
 </ul>
-
 </div>
 
 </div>
@@ -774,32 +543,24 @@ Senior Design Engineer | 2012 – 2018
 <div class="footer-container">
 
 <div>
-
 <h3>Akash Raj</h3>
-
 <p>
 Lead Technical Writer specializing in SaaS documentation strategy,
 automation workflows, and scalable documentation.
 </p>
-
 </div>
 
 <div>
-
 <h4>Contact</h4>
-
 <p>AKASH.RAJ1089@gmail.com</p>
 <p>+91 9866790163</p>
 <p>Hyderabad, Telangana</p>
-
 </div>
 
 </div>
 
 <div class="footer-bottom">
-
 © 2026 Akash Raj
-
 </div>
 
 </footer>
@@ -809,26 +570,18 @@ automation workflows, and scalable documentation.
 const toggle=document.getElementById("themeToggle");
 
 if(localStorage.getItem("theme")==="dark"){
-
 document.body.classList.add("dark");
 toggle.checked=true;
-
 }
 
 toggle.addEventListener("change",()=>{
-
 if(toggle.checked){
-
 document.body.classList.add("dark");
 localStorage.setItem("theme","dark");
-
 }else{
-
 document.body.classList.remove("dark");
 localStorage.setItem("theme","light");
-
 }
-
 });
 
 </script>
