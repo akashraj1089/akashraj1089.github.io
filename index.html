@@ -2,119 +2,107 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Akash Raj | Lead Technical Writer</title>
 
 <style>
 
-/* ============================= */
-/* ROOT THEME */
-/* ============================= */
+/* ===============================
+THEME VARIABLES
+=============================== */
 
 :root{
---bg:#f5f7fb;
---text:#1e293b;
+
+--bg:#f5f5f7;
+--text:#1f2937;
 --muted:#475569;
+
 --nav-bg:#ffffff;
 --card-bg:#ffffff;
+
 --accent:#24588d;
---shadow:0 10px 30px rgba(0,0,0,0.08);
---shadow-hover:0 25px 50px rgba(0,0,0,0.18);
+
+--shadow:0 6px 20px rgba(0,0,0,0.08);
+--shadow-hover:0 18px 40px rgba(0,0,0,0.18);
+
 --footer-bg:#1e293b;
+
 }
 
 /* DARK MODE */
 
 body.dark{
+
 --bg:#0f172a;
 --text:#e5e7eb;
---muted:#94a3b8;
+--muted:#cbd5f5;
+
 --nav-bg:#020617;
 --card-bg:#1e293b;
+
 --accent:#60a5fa;
---shadow:0 10px 30px rgba(0,0,0,0.6);
---shadow-hover:0 25px 50px rgba(0,0,0,0.9);
+
+--shadow:0 6px 25px rgba(0,0,0,0.6);
+--shadow-hover:0 20px 45px rgba(0,0,0,0.8);
+
 --footer-bg:#020617;
+
 }
 
-/* ============================= */
 /* GLOBAL */
-/* ============================= */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 font-family:
 "Aptos",
 "Segoe UI",
 -apple-system,
 BlinkMacSystemFont,
 sans-serif;
-}
 
-html{
-scroll-behavior:smooth;
+transition:background .3s,color .3s;
 }
 
 body{
 background:var(--bg);
 color:var(--text);
 line-height:1.6;
-transition:background .3s,color .3s;
 }
 
-/* ============================= */
 /* NAVBAR */
-/* ============================= */
 
 nav{
-
 position:sticky;
 top:0;
-
 background:var(--nav-bg);
-
-padding:14px 8%;
-
+box-shadow:0 2px 10px rgba(0,0,0,0.06);
+padding:12px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-box-shadow:0 4px 20px rgba(0,0,0,0.06);
-
-z-index:1000;
-
 }
 
 nav strong{
 color:var(--accent);
-font-size:18px;
 }
 
 nav a{
 text-decoration:none;
-margin-left:26px;
+margin-left:25px;
 color:var(--muted);
-font-weight:500;
-}
-
-nav a:hover{
-color:var(--accent);
 }
 
 .nav-right{
 display:flex;
 align-items:center;
-gap:26px;
+gap:25px;
 }
 
-/* ============================= */
 /* DARK MODE SWITCH */
-/* ============================= */
 
 .toggle{
 position:relative;
@@ -157,12 +145,10 @@ input:checked + .slider:before{
 transform:translateX(22px);
 }
 
-/* ============================= */
 /* HERO */
-/* ============================= */
 
 .hero{
-padding:120px 8% 110px;
+padding:100px 8% 120px;
 text-align:center;
 }
 
@@ -175,64 +161,19 @@ color:var(--accent);
 
 .hero h2{
 font-size:28px;
-margin-top:8px;
+margin-top:10px;
 }
 
 .hero p{
-max-width:760px;
-margin:28px auto;
+max-width:750px;
+margin:25px auto;
 font-size:20px;
-color:var(--muted);
 }
 
-.hero-buttons{
-margin-top:40px;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:14px;
-}
-
-/* ============================= */
-/* BUTTONS */
-/* ============================= */
-
-.button{
-padding:16px 34px;
-min-width:220px;
-text-align:center;
-background:var(--accent);
-color:white;
-text-decoration:none;
-font-weight:600;
-font-size:16px;
-border-radius:12px;
-box-shadow:0 12px 28px rgba(0,0,0,0.18);
-transition:all .25s ease;
-}
-
-.button:hover{
-transform:translateY(-4px);
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-
-.secondary{
-background:transparent;
-color:var(--accent);
-border:2px solid var(--accent);
-}
-
-.secondary:hover{
-background:var(--accent);
-color:white;
-}
-
-/* ============================= */
 /* SECTION */
-/* ============================= */
 
 .section{
-padding:70px 8%;
+padding:40px 8%;
 }
 
 .section h2{
@@ -242,26 +183,23 @@ margin-bottom:50px;
 color:var(--accent);
 }
 
-/* ============================= */
 /* GRID */
-/* ============================= */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:32px;
+gap:30px;
 }
 
-/* ============================= */
 /* CARDS */
-/* ============================= */
 
 .card{
-padding:34px;
+padding:32px;
 border-radius:20px;
 background:var(--card-bg);
 box-shadow:var(--shadow);
-transition:all .25s ease;
+
+transition:transform .25s ease, box-shadow .25s ease;
 }
 
 .card:hover{
@@ -279,12 +217,10 @@ padding-left:18px;
 color:var(--muted);
 }
 
-/* ============================= */
 /* METRICS */
-/* ============================= */
 
 .metric{
-font-size:54px;
+font-size:52px;
 font-weight:800;
 margin-bottom:6px;
 color:var(--accent);
@@ -293,18 +229,15 @@ color:var(--accent);
 .metric-label{
 font-size:12px;
 text-transform:uppercase;
-letter-spacing:.6px;
 color:var(--muted);
 margin-bottom:12px;
 }
 
-/* ============================= */
 /* EXPERIENCE */
-/* ============================= */
 
 .exp-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
@@ -313,7 +246,8 @@ padding:32px;
 border-radius:20px;
 background:var(--card-bg);
 box-shadow:var(--shadow);
-transition:all .25s ease;
+
+transition:transform .25s ease, box-shadow .25s ease;
 }
 
 .exp-card:hover{
@@ -321,37 +255,21 @@ transform:translateY(-6px);
 box-shadow:var(--shadow-hover);
 }
 
-/* COMPANY NAME */
-
-.exp-company{
-font-size:24px;
-font-weight:700;
-color:#000;
-margin-bottom:10px;
+.exp-card h3{
+color:var(--accent);
 }
 
-/* ROLE */
-
-.exp-role{
-font-size:13px;
-text-transform:uppercase;
-letter-spacing:.7px;
-color:var(--muted);
-margin-bottom:18px;
+.exp-card span{
+display:block;
+margin-bottom:12px;
 font-weight:600;
-}
-
-body.dark .exp-company{
-color:#e5e7eb;
 }
 
 .exp-card ul{
 padding-left:18px;
 }
 
-/* ============================= */
 /* FOOTER */
-/* ============================= */
 
 footer{
 margin-top:80px;
@@ -411,22 +329,6 @@ automation-driven publishing workflows,
 and scalable documentation strategies.
 </p>
 
-<div class="hero-buttons">
-
-<a class="button" href="Akash_Raj_Resume.pdf" download>
-Download Resume
-</a>
-
-<a class="button secondary"
-href="https://www.linkedin.com/in/akash-raj-521990126/"
-target="_blank">
-
-View LinkedIn
-
-</a>
-
-</div>
-
 </section>
 
 <section id="skills" class="section">
@@ -442,6 +344,7 @@ View LinkedIn
 <li>Online Help Systems</li>
 <li>Troubleshooting Guides</li>
 <li>Release Notes</li>
+<li>SOP Documentation</li>
 <li>API Documentation</li>
 </ul>
 </div>
@@ -450,19 +353,19 @@ View LinkedIn
 <h3>Documentation Strategy</h3>
 <ul>
 <li>Documentation Architecture</li>
-<li>Content Governance</li>
-<li>Content Review Board</li>
-<li>Delivery Planning Coordination</li>
-<li>Docs-as-Code Approach</li>
+<li>Content Structuring</li>
+<li>Documentation Governance</li>
+<li>Content Review Boards</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Automation</h3>
 <ul>
-<li>Publishing Automation - Powershell</li>
-<li>Maintenance Release Notes Automation - Python</li>
-<li>Documentation Workflow Automation</li>
+<li>PowerShell Publishing Automation</li>
+<li>Python JIRA Extraction Tool</li>
+<li>Docs-as-Code</li>
+<li>Docusaurus POC</li>
 </ul>
 </div>
 
@@ -475,7 +378,46 @@ View LinkedIn
 <li>GitHub</li>
 <li>VS Code</li>
 <li>Snagit</li>
+<li>Visio</li>
 </ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements" class="section">
+
+<h2>Key Achievements</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="metric">60%</div>
+<div class="metric-label">Publishing Effort Reduced</div>
+<h3>Publishing Automation</h3>
+<p>Automated documentation publishing workflows using PowerShell reducing manual effort.</p>
+</div>
+
+<div class="card">
+<div class="metric">80%</div>
+<div class="metric-label">Manual Work Reduced</div>
+<h3>JIRA Automation</h3>
+<p>Developed Python tools to automate JIRA data extraction for documentation workflows.</p>
+</div>
+
+<div class="card">
+<div class="metric">3×</div>
+<div class="metric-label">Faster Review Cycles</div>
+<h3>Documentation Governance</h3>
+<p>Established a Content Review Board improving documentation quality.</p>
+</div>
+
+<div class="card">
+<div class="metric">2×</div>
+<div class="metric-label">Faster Documentation Delivery</div>
+<h3>Docs-as-Code</h3>
+<p>Built a Docs-as-Code proof of concept using GitHub, VS Code and Docusaurus.</p>
 </div>
 
 </div>
@@ -484,52 +426,56 @@ View LinkedIn
 
 <section id="experience" class="section">
 
-<h2>Work Experience</h2>
+<h2>Experience</h2>
 
 <div class="exp-grid">
 
 <div class="exp-card">
-<div class="exp-company">Vitech Systems</div>
-<div class="exp-role">Lead Technical Writer | 2021 – Present</div>
+<h3>Vitech Systems</h3>
+<span>Lead Technical Writer | 2021 – Present</span>
 <ul>
 <li>Led documentation strategy for enterprise SaaS insurance platforms.</li>
 <li>Developed PowerShell automation reducing publishing effort ~60%.</li>
-<li>Built Python automation reducing release note effort ~80%.</li>
+<li>Built Python automation tools reducing release note effort ~80%.</li>
 <li>Standardized documentation architecture across platforms.</li>
-<li>Established Content Review Board improving documentation quality.</li>
-<li>Mentored writers and improved authoring standards.</li>
+<li>Established Content Review Board improving governance.</li>
+<li>Designed documentation lifecycle aligned with releases.</li>
+<li>Mentored technical writers and improved authoring standards.</li>
 </ul>
 </div>
 
 <div class="exp-card">
-<div class="exp-company">Amphora Software</div>
-<div class="exp-role">Senior Technical Writer | 2020 – 2021</div>
+<h3>Amphora Software</h3>
+<span>Senior Technical Writer | 2020 – 2021</span>
 <ul>
-<li>Managed documentation lifecycle aligned with product releases.</li>
-<li>Developed user guides and operational documentation.</li>
-<li>Collaborated with product managers and engineering teams.</li>
-<li>Standardized documentation templates.</li>
+<li>Led documentation lifecycle aligned with product releases.</li>
+<li>Created user guides and operational documentation.</li>
+<li>Coordinated with product managers, developers and QA.</li>
+<li>Standardized documentation templates and repositories.</li>
+<li>Improved usability through documentation feedback.</li>
 </ul>
 </div>
 
 <div class="exp-card">
-<div class="exp-company">ValueLabs</div>
-<div class="exp-role">Senior Technical Writer | 2018 – 2020</div>
+<h3>ValueLabs</h3>
+<span>Senior Technical Writer | 2018 – 2020</span>
 <ul>
 <li>Reported directly to CIO of American Credit Acceptance.</li>
-<li>Led enterprise IT documentation initiatives.</li>
+<li>Led documentation initiatives across IT teams.</li>
+<li>Developed enterprise IT documentation.</li>
 <li>Authored API documentation using Postman.</li>
-<li>Improved knowledge management documentation.</li>
+<li>Improved SOP and knowledge management documentation.</li>
 </ul>
 </div>
 
 <div class="exp-card">
-<div class="exp-company">Cyient</div>
-<div class="exp-role">Senior Design Engineer | 2012 – 2018</div>
+<h3>Cyient</h3>
+<span>Senior Design Engineer | 2012 – 2018</span>
 <ul>
 <li>Produced user manuals and online help systems.</li>
 <li>Created documentation for Boeing internal tools.</li>
 <li>Applied Microsoft Style Guide standards.</li>
+<li>Modernized legacy documentation.</li>
 <li>Implemented structured authoring using DITA.</li>
 </ul>
 </div>
@@ -546,21 +492,21 @@ View LinkedIn
 <h3>Akash Raj</h3>
 <p>
 Lead Technical Writer specializing in SaaS documentation strategy,
-automation workflows, and scalable documentation.
+automation workflows, and scalable developer documentation.
 </p>
 </div>
 
 <div>
 <h4>Contact</h4>
-<p>AKASH.RAJ1089@gmail.com</p>
-<p>+91 9866790163</p>
 <p>Hyderabad, Telangana</p>
+<p>Akash.raj1089@gmail.com</p>
+<p>+91 9866790163</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-© 2026 Akash Raj
+© 2026 Akash Raj — Documentation Strategy • Automation • Docs-as-Code
 </div>
 
 </footer>
@@ -575,6 +521,7 @@ toggle.checked=true;
 }
 
 toggle.addEventListener("change",()=>{
+
 if(toggle.checked){
 document.body.classList.add("dark");
 localStorage.setItem("theme","dark");
@@ -582,6 +529,7 @@ localStorage.setItem("theme","dark");
 document.body.classList.remove("dark");
 localStorage.setItem("theme","light");
 }
+
 });
 
 </script>
