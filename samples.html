@@ -34,6 +34,8 @@ body.dark{
 --accent:#60a5fa;
 }
 
+/* RESET */
+
 *{
 margin:0;
 padding:0;
@@ -60,6 +62,11 @@ align-items:center;
 box-shadow:0 4px 20px rgba(0,0,0,0.06);
 }
 
+nav .right{
+display:flex;
+align-items:center;
+}
+
 nav a{
 margin-left:20px;
 text-decoration:none;
@@ -69,6 +76,17 @@ font-weight:500;
 
 nav a:hover{
 color:var(--accent);
+}
+
+/* TOGGLE */
+
+.toggle{
+margin-left:20px;
+cursor:pointer;
+padding:6px 10px;
+border-radius:6px;
+border:1px solid var(--muted);
+font-size:14px;
 }
 
 /* HERO */
@@ -164,10 +182,13 @@ font-weight:600;
 
 <nav>
 <div><strong>Akash Raj</strong></div>
-<div>
+
+<div class="right">
 <a href="index.html">Home</a>
 <a href="index.html#experience">Experience</a>
 <a href="index.html#contact">Contact</a>
+
+<button class="toggle" onclick="toggleTheme()">🌙</button>
 </div>
 </nav>
 
@@ -295,6 +316,26 @@ View Sample
 <section class="section">
 <a href="index.html" class="back">← Back to Portfolio</a>
 </section>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle("dark");
+
+// save preference
+if(document.body.classList.contains("dark")){
+localStorage.setItem("theme","dark");
+}else{
+localStorage.setItem("theme","light");
+}
+}
+
+// load saved theme
+window.onload = function(){
+if(localStorage.getItem("theme") === "dark"){
+document.body.classList.add("dark");
+}
+}
+</script>
 
 </body>
 </html>
