@@ -10,7 +10,9 @@
 
 <style>
 
-/* SAME THEME AS MAIN PAGE */
+/* ============================= */
+/* THEME */
+/* ============================= */
 
 :root{
 --bg:#f5f7fb;
@@ -47,7 +49,9 @@ color:var(--text);
 line-height:1.6;
 }
 
+/* ============================= */
 /* NAV */
+/* ============================= */
 
 nav{
 position:sticky;
@@ -71,7 +75,9 @@ nav a:hover{
 color:var(--accent);
 }
 
+/* ============================= */
 /* HERO */
+/* ============================= */
 
 .hero{
 padding:90px 8%;
@@ -83,7 +89,9 @@ font-size:48px;
 color:var(--accent);
 }
 
+/* ============================= */
 /* SECTION */
+/* ============================= */
 
 .section{
 padding:60px 8%;
@@ -95,7 +103,9 @@ margin-bottom:30px;
 color:var(--accent);
 }
 
+/* ============================= */
 /* GRID */
+/* ============================= */
 
 .grid{
 display:grid;
@@ -103,7 +113,9 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:28px;
 }
 
+/* ============================= */
 /* CARD */
+/* ============================= */
 
 .card{
 background:var(--card-bg);
@@ -127,13 +139,30 @@ color:var(--muted);
 margin-bottom:10px;
 }
 
-.card a{
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+.btn{
+display:inline-block;
+padding:10px 16px;
+background:var(--accent);
+color:#fff;
+border-radius:8px;
 text-decoration:none;
-color:var(--accent);
 font-weight:600;
+margin-top:10px;
+margin-right:10px;
+transition:.2s;
 }
 
-/* BACK BUTTON */
+.btn:hover{
+opacity:0.9;
+}
+
+/* ============================= */
+/* BACK */
+/* ============================= */
 
 .back{
 display:inline-block;
@@ -182,7 +211,13 @@ font-weight:600;
 
 <p><strong>Impact:</strong> Reduced manual effort by ~80%.</p>
 
-<a href="#">View Sample</a>
+<a href="maintenance-release-notes-automation.pdf" target="_blank" class="btn">
+View Sample
+</a>
+
+<a href="maintenance-release-notes-automation.pdf" download class="btn">
+Download PDF
+</a>
 
 </div>
 
@@ -195,7 +230,7 @@ font-weight:600;
 
 <p><strong>Impact:</strong> Reduced publishing effort by ~60%.</p>
 
-<a href="#">View Sample</a>
+<a href="#" class="btn">View Sample</a>
 
 </div>
 
@@ -252,19 +287,27 @@ font-weight:600;
 <div class="card">
 <h3>Release Notes Sample</h3>
 <p>Example of automated maintenance release notes generated using Python tool.</p>
-<a href="#">Download PDF</a>
+
+<a href="maintenance-release-notes-automation.pdf" target="_blank" class="btn">
+View PDF
+</a>
+
+<a href="maintenance-release-notes-automation.pdf" download class="btn">
+Download
+</a>
+
 </div>
 
 <div class="card">
 <h3>User Guide Sample</h3>
 <p>Structured SaaS product documentation with task-based organization.</p>
-<a href="#">View Document</a>
+<a href="#" class="btn">View Document</a>
 </div>
 
 <div class="card">
 <h3>API Documentation</h3>
 <p>Sample API documentation created using Postman and structured formats.</p>
-<a href="#">View Sample</a>
+<a href="#" class="btn">View Sample</a>
 </div>
 
 </div>
