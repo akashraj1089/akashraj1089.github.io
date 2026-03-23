@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automation Work Sample | Akash Raj</title>
+
+<style>
+:root{
+--bg:#f5f7fb;
+--text:#1e293b;
+--muted:#64748b;
+--card:#ffffff;
+--accent:#2563eb;
+}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:var(--bg);
+color:var(--text);
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:30px 20px 60px;
+}
+
+h1{
+font-size:36px;
+margin-bottom:8px;
+}
+
+.subtitle{
+color:var(--muted);
+margin-bottom:25px;
+}
+
+.section{
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
+}
+
+.card{
+background:var(--card);
+padding:18px;
+border-radius:14px;
+box-shadow:0 6px 16px rgba(0,0,0,0.05);
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.kpi{
+font-size:22px;
+font-weight:600;
+margin-bottom:4px;
+}
+
+.label{
+font-size:13px;
+color:var(--muted);
+}
+
+.arch{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:8px;
+margin-top:10px;
+}
+
+.node{
+background:#fff;
+padding:10px 14px;
+border-radius:10px;
+font-size:13px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.arrow{
+color:var(--accent);
+font-weight:600;
+}
+
+.tags{
+margin-top:8px;
+}
+
+.tag{
+display:inline-block;
+background:#e2e8f0;
+padding:5px 9px;
+border-radius:8px;
+font-size:12px;
+margin:3px;
+}
+
+.code{
+background:#0f172a;
+color:#e2e8f0;
+padding:14px;
+border-radius:10px;
+font-size:12px;
+overflow:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:9px 14px;
+background:var(--accent);
+color:#fff;
+text-decoration:none;
+border-radius:8px;
+font-size:13px;
+}
+
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+@media(max-width:768px){
+.split{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Automated Documentation Pipeline</h1>
+<p class="subtitle">RoboHelp + PowerShell + Scheduled Deployment</p>
+
+<!-- KPI STRIP -->
+<div class="section grid">
+<div class="card"><div class="kpi">80%</div><div class="label">Manual effort reduced</div></div>
+<div class="card"><div class="kpi">30+</div><div class="label">Modules automated</div></div>
+<div class="card"><div class="kpi">0</div><div class="label">Manual intervention</div></div>
+</div>
+
+<!-- PROBLEM / SOLUTION -->
+<div class="section split">
+<div class="card">
+<h3>Problem</h3>
+<p>Manual builds across multiple documentation sets caused delays, inconsistent outputs, and dependency on individual execution.</p>
+</div>
+
+<div class="card">
+<h3>Solution</h3>
+<p>Implemented a scheduled automation pipeline that builds, validates, and deploys documentation using CLI-based workflows.</p>
+</div>
+</div>
+
+<!-- ARCHITECTURE -->
+<div class="section card">
+<h3>Architecture</h3>
+<div class="arch">
+<div class="node">SVN</div>
+<span class="arrow">→</span>
+<div class="node">PowerShell</div>
+<span class="arrow">→</span>
+<div class="node">RoboHelp CLI</div>
+<span class="arrow">→</span>
+<div class="node">Logs</div>
+<span class="arrow">→</span>
+<div class="node">SCP</div>
+<span class="arrow">→</span>
+<div class="node">Server</div>
+</div>
+<p class="label" style="text-align:center;margin-top:10px;">Triggered via Task Scheduler</p>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+<h3>Key Features</h3>
+<div class="grid">
+<div class="card">Multi-project orchestration</div>
+<div class="card">Automated build + deployment</div>
+<div class="card">Secure SCP transfer</div>
+<div class="card">Log-based validation</div>
+</div>
+</div>
+
+<!-- TECH -->
+<div class="section card">
+<h3>Tech Stack</h3>
+<div class="tags">
+<span class="tag">PowerShell</span>
+<span class="tag">RoboHelp</span>
+<span class="tag">Posh-SSH</span>
+<span class="tag">Task Scheduler</span>
+<span class="tag">SVN</span>
+</div>
+</div>
+
+<!-- CODE -->
+<div class="section card">
+<h3>Code Snapshot</h3>
+<div class="code">
+Start-Process -FilePath $roboHelpPath 
+-ArgumentList "--cl \"$ProjectFilePath\" -o help" 
+-NoNewWindow -Wait
+
+Set-SFTPItem -SessionId $session.SessionId 
+-Path $_.FullName 
+-Destination $RemotePath -Force
+</div>
+<a class="btn" href="#">View Full Code</a>
+</div>
+
+</div>
+</body>
+</html>
