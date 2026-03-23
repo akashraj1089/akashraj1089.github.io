@@ -1,109 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automation Work Sample | Akash Raj</title>
+
+<title>Automation Pipeline | Akash Raj</title>
 
 <style>
+
+/* ============================= */
+/* THEME (SAME AS MAIN PAGE) */
+/* ============================= */
+
 :root{
 --bg:#f5f7fb;
 --text:#1e293b;
---muted:#64748b;
---card:#ffffff;
---accent:#2563eb;
+--muted:#475569;
+--nav-bg:#ffffff;
+--card-bg:#ffffff;
+--accent:#24588d;
+--shadow:0 10px 30px rgba(0,0,0,0.08);
+--shadow-hover:0 25px 50px rgba(0,0,0,0.18);
+}
+
+body.dark{
+--bg:#0f172a;
+--text:#e5e7eb;
+--muted:#94a3b8;
+--nav-bg:#020617;
+--card-bg:#1e293b;
+--accent:#60a5fa;
+}
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Aptos","Segoe UI",sans-serif;
 }
 
 body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
 background:var(--bg);
 color:var(--text);
+line-height:1.6;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:30px 20px 60px;
+/* NAV */
+
+nav{
+position:sticky;
+top:0;
+background:var(--nav-bg);
+padding:14px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 4px 20px rgba(0,0,0,0.06);
 }
 
-h1{
-font-size:36px;
-margin-bottom:8px;
+nav .right{
+display:flex;
+align-items:center;
 }
 
-.subtitle{
+nav a{
+margin-left:20px;
+text-decoration:none;
 color:var(--muted);
-margin-bottom:25px;
+font-weight:500;
 }
+
+nav a:hover{
+color:var(--accent);
+}
+
+/* TOGGLE */
+
+.toggle{
+margin-left:20px;
+cursor:pointer;
+padding:6px 10px;
+border-radius:6px;
+border:1px solid var(--muted);
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+padding:30px 8%;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+color:var(--accent);
+}
+
+.hero p{
+color:var(--muted);
+max-width:700px;
+margin:10px auto 0;
+}
+
+/* SECTION */
 
 .section{
-margin-bottom:30px;
+padding:40px 8%;
 }
+
+.section h2{
+font-size:30px;
+margin-bottom:25px;
+color:var(--accent);
+}
+
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:18px;
+gap:28px;
 }
 
+.grid.three{
+grid-template-columns: repeat(3, 1fr);
+}
+
+@media(max-width:900px){
+.grid.three{
+grid-template-columns: 1fr;
+}
+}
+
+/* CARD */
+
 .card{
-background:var(--card);
-padding:18px;
-border-radius:14px;
-box-shadow:0 6px 16px rgba(0,0,0,0.05);
-transition:0.2s;
+background:var(--card-bg);
+padding:26px;
+border-radius:18px;
+box-shadow:var(--shadow);
+transition:.25s;
 }
 
 .card:hover{
-transform:translateY(-4px);
+transform:translateY(-6px);
+box-shadow:var(--shadow-hover);
 }
 
-.kpi{
-font-size:22px;
-font-weight:600;
-margin-bottom:4px;
-}
-
-.label{
-font-size:13px;
-color:var(--muted);
-}
+/* ARCH FLOW */
 
 .arch{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-align-items:center;
-gap:8px;
+gap:10px;
 margin-top:10px;
 }
 
 .node{
-background:#fff;
+background:var(--card-bg);
 padding:10px 14px;
 border-radius:10px;
+box-shadow:var(--shadow);
 font-size:13px;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
 .arrow{
 color:var(--accent);
-font-weight:600;
+font-weight:bold;
 }
 
-.tags{
-margin-top:8px;
-}
+/* TAGS */
 
 .tag{
 display:inline-block;
 background:#e2e8f0;
-padding:5px 9px;
+padding:6px 10px;
 border-radius:8px;
 font-size:12px;
-margin:3px;
+margin:4px;
 }
+
+/* CODE */
 
 .code{
 background:#0f172a;
@@ -114,59 +196,80 @@ font-size:12px;
 overflow:auto;
 }
 
+/* BUTTON */
+
 .btn{
 display:inline-block;
-margin-top:10px;
-padding:9px 14px;
+padding:10px 16px;
 background:var(--accent);
 color:#fff;
-text-decoration:none;
 border-radius:8px;
-font-size:13px;
+text-decoration:none;
+font-weight:600;
+margin-top:10px;
 }
 
-.split{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-}
+/* BACK */
 
-@media(max-width:768px){
-.split{grid-template-columns:1fr;}
+.back{
+display:inline-block;
+margin-top:30px;
+color:var(--accent);
+text-decoration:none;
+font-weight:600;
 }
 
 </style>
+
 </head>
 
 <body>
-<div class="container">
 
-<h1>Automated Documentation Pipeline</h1>
-<p class="subtitle">RoboHelp + PowerShell + Scheduled Deployment</p>
+<!-- NAV -->
+<nav>
+<div><strong>Akash Raj</strong></div>
 
-<!-- KPI STRIP -->
-<div class="section grid">
-<div class="card"><div class="kpi">80%</div><div class="label">Manual effort reduced</div></div>
-<div class="card"><div class="kpi">30+</div><div class="label">Modules automated</div></div>
-<div class="card"><div class="kpi">0</div><div class="label">Manual intervention</div></div>
+<div class="right">
+<a href="index.html">Home</a>
+<button class="toggle" onclick="toggleTheme()">🌙</button>
 </div>
+</nav>
 
-<!-- PROBLEM / SOLUTION -->
-<div class="section split">
+<!-- HERO -->
+<section class="hero">
+<h1>Automation Pipeline</h1>
+<p>End-to-end documentation build and deployment automation using RoboHelp CLI, PowerShell, and scheduled workflows.</p>
+</section>
+
+<!-- CONTENT -->
+<section class="section">
+
+<div class="grid three">
+
 <div class="card">
 <h3>Problem</h3>
-<p>Manual builds across multiple documentation sets caused delays, inconsistent outputs, and dependency on individual execution.</p>
+<p>Manual multi-product builds caused delays, inconsistencies, and high operational overhead.</p>
 </div>
 
 <div class="card">
 <h3>Solution</h3>
-<p>Implemented a scheduled automation pipeline that builds, validates, and deploys documentation using CLI-based workflows.</p>
-</div>
+<p>Implemented a fully automated pipeline for build, validation, and deployment.</p>
 </div>
 
-<!-- ARCHITECTURE -->
-<div class="section card">
-<h3>Architecture</h3>
+<div class="card">
+<h3>Impact</h3>
+<p>~80% reduction in manual effort and zero-touch publishing across products.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Architecture</h2>
+
+<div class="card">
 <div class="arch">
 <div class="node">SVN</div>
 <span class="arrow">→</span>
@@ -180,35 +283,30 @@ gap:18px;
 <span class="arrow">→</span>
 <div class="node">Server</div>
 </div>
-<p class="label" style="text-align:center;margin-top:10px;">Triggered via Task Scheduler</p>
 </div>
 
-<!-- FEATURES -->
-<div class="section">
-<h3>Key Features</h3>
-<div class="grid">
-<div class="card">Multi-project orchestration</div>
-<div class="card">Automated build + deployment</div>
-<div class="card">Secure SCP transfer</div>
-<div class="card">Log-based validation</div>
-</div>
-</div>
+</section>
 
-<!-- TECH -->
-<div class="section card">
-<h3>Tech Stack</h3>
-<div class="tags">
+<section class="section">
+
+<h2>Tech Stack</h2>
+
+<div class="card">
 <span class="tag">PowerShell</span>
-<span class="tag">RoboHelp</span>
+<span class="tag">RoboHelp CLI</span>
 <span class="tag">Posh-SSH</span>
 <span class="tag">Task Scheduler</span>
 <span class="tag">SVN</span>
 </div>
-</div>
 
-<!-- CODE -->
-<div class="section card">
-<h3>Code Snapshot</h3>
+</section>
+
+<section class="section">
+
+<h2>Code Snapshot</h2>
+
+<div class="card">
+
 <div class="code">
 Start-Process -FilePath $roboHelpPath 
 -ArgumentList "--cl \"$ProjectFilePath\" -o help" 
@@ -218,35 +316,34 @@ Set-SFTPItem -SessionId $session.SessionId
 -Path $_.FullName 
 -Destination $RemotePath -Force
 </div>
-<a class="btn" onclick="toggleCode()">View Full Code</a>
-
-<div id="fullCode" style="display:none; margin-top:15px;" class="code">
-# Full script excerpt (trimmed for portfolio)
-
-Function Run-RoboHelp {
-    param ($ProjectFilePath, $LogFilePath, $OutputPath)
-
-    Start-Process -FilePath $roboHelpPath `
-    -ArgumentList "--cl `"$ProjectFilePath`" -o help --log `"$LogFilePath`" -p `"$OutputPath`"" `
-    -NoNewWindow -Wait
-}
-
-Function Invoke-SCP {
-    param ($LocalPath, $RemotePath)
-
-    Set-SFTPItem -SessionId $session.SessionId `
-    -Path $LocalPath `
-    -Destination $RemotePath -Force
-}
-</div>
-</div>
 
 </div>
-</body>
-</html>
+
+</section>
+
+<section class="section">
+<a href="index.html" class="back">← Back to Work Samples</a>
+</section>
+
+<!-- DARK MODE SCRIPT -->
+
 <script>
-function toggleCode(){
-  const el = document.getElementById("fullCode");
-  el.style.display = el.style.display === "none" ? "block" : "none";
+function toggleTheme(){
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+localStorage.setItem("theme","dark");
+}else{
+localStorage.setItem("theme","light");
+}
+}
+
+window.onload = function(){
+if(localStorage.getItem("theme") === "dark"){
+document.body.classList.add("dark");
+}
 }
 </script>
+
+</body>
+</html>
