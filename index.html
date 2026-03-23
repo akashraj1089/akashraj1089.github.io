@@ -302,12 +302,18 @@ margin-bottom:12px;
 /* EXPERIENCE */
 /* ============================= */
 
+.section h2{
+text-align:left; /* FIX: left align heading */
+}
+
 .exp-grid{
 display:flex;
 flex-direction:column;
 gap:30px;
-max-width:800px;
-margin:auto;
+
+/* REMOVE CENTERING */
+max-width:none;
+margin:0;
 }
 
 .exp-card{
