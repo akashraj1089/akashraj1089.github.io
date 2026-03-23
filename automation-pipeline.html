@@ -218,9 +218,35 @@ Set-SFTPItem -SessionId $session.SessionId
 -Path $_.FullName 
 -Destination $RemotePath -Force
 </div>
-<a class="btn" href="#">View Full Code</a>
+<a class="btn" onclick="toggleCode()">View Full Code</a>
+
+<div id="fullCode" style="display:none; margin-top:15px;" class="code">
+# Full script excerpt (trimmed for portfolio)
+
+Function Run-RoboHelp {
+    param ($ProjectFilePath, $LogFilePath, $OutputPath)
+
+    Start-Process -FilePath $roboHelpPath `
+    -ArgumentList "--cl `"$ProjectFilePath`" -o help --log `"$LogFilePath`" -p `"$OutputPath`"" `
+    -NoNewWindow -Wait
+}
+
+Function Invoke-SCP {
+    param ($LocalPath, $RemotePath)
+
+    Set-SFTPItem -SessionId $session.SessionId `
+    -Path $LocalPath `
+    -Destination $RemotePath -Force
+}
+</div>
 </div>
 
 </div>
 </body>
 </html>
+<script>
+function toggleCode(){
+  const el = document.getElementById("fullCode");
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+</script>
