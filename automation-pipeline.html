@@ -7,73 +7,74 @@
 
 <style>
 :root{
---bg:#f5f7fb;
---text:#1e293b;
---muted:#475569;
---nav-bg:#ffffff;
---card-bg:#ffffff;
---accent:#24588d;
---shadow:0 10px 30px rgba(0,0,0,0.08);
---shadow-hover:0 25px 50px rgba(0,0,0,0.18);
+--bg:#f5f7fb;--text:#1e293b;--muted:#475569;--nav-bg:#ffffff;--card-bg:#ffffff;--accent:#24588d;--shadow:0 10px 30px rgba(0,0,0,0.08);--shadow-hover:0 25px 50px rgba(0,0,0,0.18);
 }
-
-body.dark{
---bg:#0f172a;
---text:#e5e7eb;
---muted:#94a3b8;
---nav-bg:#020617;
---card-bg:#1e293b;
---accent:#60a5fa;
-}
-
+body.dark{--bg:#0f172a;--text:#e5e7eb;--muted:#94a3b8;--nav-bg:#020617;--card-bg:#1e293b;--accent:#60a5fa;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Aptos","Segoe UI",sans-serif;}
-
 body{background:var(--bg);color:var(--text);line-height:1.6;}
 
-nav{
-position:sticky;top:0;background:var(--nav-bg);padding:14px 8%;
-display:flex;justify-content:space-between;align-items:center;
-box-shadow:0 4px 20px rgba(0,0,0,0.06);
-}
-
-nav .right{display:flex;align-items:center;}
-nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-weight:500;}
-nav a:hover{color:var(--accent);}
-
+nav{position:sticky;top:0;background:var(--nav-bg);padding:14px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);} 
+nav .right{display:flex;align-items:center;} 
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-weight:500;} 
+nav a:hover{color:var(--accent);} 
 .toggle{margin-left:20px;cursor:pointer;padding:6px 10px;border-radius:6px;border:1px solid var(--muted);font-size:14px;}
 
-.hero{padding:30px 8%;text-align:center;}
-.hero h1{font-size:48px;color:var(--accent);}
+.hero{padding:30px 8%;text-align:center;} 
+.hero h1{font-size:48px;color:var(--accent);} 
 .hero p{color:var(--muted);max-width:700px;margin:10px auto 0;}
 
-.section{padding:40px 8%;}
-.section h2{font-size:30px;margin-bottom:25px;color:var(--accent);}
+.section{padding:40px 8%;} 
+.section h2{font-size:30px;margin-bottom:25px;color:var(--accent);} 
 
-.grid{display:grid;gap:28px;}
+.grid{display:grid;gap:28px;} 
 .grid.three{grid-template-columns:repeat(3,1fr);} 
-
 @media(max-width:900px){.grid.three{grid-template-columns:1fr;}}
 
-.card{
-background:var(--card-bg);padding:26px;border-radius:18px;
-box-shadow:var(--shadow);transition:.25s;
-}
-
+.card{background:var(--card-bg);padding:26px;border-radius:18px;box-shadow:var(--shadow);transition:.25s;} 
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);} 
 
-.kpi{font-size:26px;font-weight:700;margin-bottom:6px;}
-.label{font-size:13px;color:var(--muted);}
+.kpi{font-size:26px;font-weight:700;margin-bottom:6px;} 
+.label{font-size:13px;color:var(--muted);} 
 
-.arch{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px;}
-.node{background:var(--card-bg);padding:10px 14px;border-radius:10px;box-shadow:var(--shadow);font-size:13px;}
-.arrow{color:var(--accent);font-weight:bold;}
+/* MODERN WORKFLOW */
+.workflow{
+position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px;
+}
 
-.tag{display:inline-block;background:#e2e8f0;padding:6px 10px;border-radius:8px;font-size:12px;margin:4px;}
+.workflow::before{
+content:"";position:absolute;top:50%;left:0;right:0;height:3px;background:linear-gradient(90deg, transparent, var(--accent), transparent);opacity:.2;
+}
 
-.code{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;font-size:12px;overflow:auto;}
+.step{
+position:relative;z-index:2;background:var(--card-bg);padding:18px;border-radius:16px;box-shadow:var(--shadow);width:200px;text-align:center;transition:.3s;
+}
 
-.btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;margin-top:10px;}
+.step:hover{transform:translateY(-8px) scale(1.05);box-shadow:var(--shadow-hover);} 
 
+.icon{
+width:50px;height:50px;margin:0 auto 10px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-size:22px;box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.step h4{margin-bottom:6px;color:var(--accent);} 
+.step p{font-size:13px;color:var(--muted);} 
+
+/* FLOW DOT ANIMATION */
+.dot{
+position:absolute;top:50%;width:10px;height:10px;border-radius:50%;background:var(--accent);animation:move 4s linear infinite;
+}
+
+@keyframes move{
+0%{left:0%;opacity:0;} 
+10%{opacity:1;} 
+90%{opacity:1;} 
+100%{left:100%;opacity:0;} 
+}
+
+.tag{display:inline-block;background:#e2e8f0;padding:6px 10px;border-radius:8px;font-size:12px;margin:4px;} 
+
+.code{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;font-size:12px;overflow:auto;} 
+
+.btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;margin-top:10px;} 
 .back{display:inline-block;margin-top:30px;color:var(--accent);text-decoration:none;font-weight:600;}
 
 </style>
@@ -94,7 +95,7 @@ box-shadow:var(--shadow);transition:.25s;
 <p>End-to-end documentation build and deployment automation using RoboHelp CLI, PowerShell, and scheduled workflows.</p>
 </section>
 
-<!-- KPI STRIP (RESTORED) -->
+<!-- KPI -->
 <section class="section">
 <div class="grid three">
 <div class="card"><div class="kpi">80%</div><div class="label">Manual effort reduced</div></div>
@@ -103,57 +104,50 @@ box-shadow:var(--shadow);transition:.25s;
 </div>
 </section>
 
-<!-- PROBLEM / SOLUTION / IMPACT -->
+<!-- PROBLEM SOLUTION -->
 <section class="section">
 <div class="grid three">
-<div class="card">
-<h3>Problem</h3>
-<p>Manual multi-product builds caused delays, inconsistencies, and high operational overhead.</p>
-</div>
-
-<div class="card">
-<h3>Solution</h3>
-<p>Implemented a fully automated pipeline for build, validation, and deployment using CLI-based workflows.</p>
-</div>
-
-<div class="card">
-<h3>Impact</h3>
-<p>~80% reduction in manual effort and zero-touch publishing across products.</p>
-</div>
+<div class="card"><h3>Problem</h3><p>Manual multi-product builds caused delays, inconsistencies, and high operational overhead.</p></div>
+<div class="card"><h3>Solution</h3><p>Automated pipeline using PowerShell + RoboHelp CLI for build, validation, and deployment.</p></div>
+<div class="card"><h3>Impact</h3><p>~80% reduction in effort with fully unattended publishing.</p></div>
 </div>
 </section>
 
-<!-- ARCHITECTURE -->
+<!-- WORKFLOW -->
 <section class="section">
-<h2>Architecture</h2>
-<div class="card">
-<div class="arch">
-<div class="node">SVN</div>
-<span class="arrow">→</span>
-<div class="node">PowerShell</div>
-<span class="arrow">→</span>
-<div class="node">RoboHelp CLI</div>
-<span class="arrow">→</span>
-<div class="node">Logs</div>
-<span class="arrow">→</span>
-<div class="node">SCP</div>
-<span class="arrow">→</span>
-<div class="node">Server</div>
+<h2>Workflow Automation</h2>
+<div class="workflow">
+<div class="dot"></div>
+
+<div class="step">
+<div class="icon">⚙️</div>
+<h4>PowerShell</h4>
+<p>Refreshes & updates local project files</p>
 </div>
+
+<div class="step">
+<div class="icon">🛠</div>
+<h4>RoboHelp CLI</h4>
+<p>Builds latest documentation output</p>
 </div>
+
+<div class="step">
+<div class="icon">📦</div>
+<h4>SVN</h4>
+<p>Publishes generated output</p>
+</div>
+
+<div class="step">
+<div class="icon">🚀</div>
+<h4>Server (WinSCP)</h4>
+<p>Deploys output via secure transfer</p>
+</div>
+
+</div>
+<p class="label" style="text-align:center;margin-top:15px;">Fully automated via Task Scheduler</p>
 </section>
 
-<!-- FEATURES -->
-<section class="section">
-<h2>Key Features</h2>
-<div class="grid three">
-<div class="card">Multi-project orchestration</div>
-<div class="card">Automated build & deployment</div>
-<div class="card">Secure SCP transfer</div>
-</div>
-</section>
-
-<!-- TECH STACK -->
+<!-- TECH -->
 <section class="section">
 <h2>Tech Stack</h2>
 <div class="card">
@@ -186,18 +180,8 @@ Set-SFTPItem -SessionId $session.SessionId
 </section>
 
 <script>
-function toggleTheme(){
-document.body.classList.toggle("dark");
-if(document.body.classList.contains("dark")){
-localStorage.setItem("theme","dark");
-}else{
-localStorage.setItem("theme","light");
-}}
-
-window.onload=function(){
-if(localStorage.getItem("theme")==="dark"){
-document.body.classList.add("dark");
-}}
+function toggleTheme(){document.body.classList.toggle("dark");localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light");}
+window.onload=function(){if(localStorage.getItem("theme")==="dark"){document.body.classList.add("dark");}}
 </script>
 
 </body>
