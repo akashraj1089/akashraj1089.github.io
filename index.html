@@ -303,9 +303,11 @@ margin-bottom:12px;
 /* ============================= */
 
 .exp-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+display:flex;
+flex-direction:column;
 gap:30px;
+max-width:800px;
+margin:auto;
 }
 
 .exp-card{
