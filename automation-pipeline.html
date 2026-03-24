@@ -221,16 +221,16 @@ border:1px solid rgba(96,165,250,0.25);
 <section class="section">
 <div class="grid three">
 <div class="card"><div class="kpi">80%</div><div class="label">Manual effort reduced</div></div>
-<div class="card"><div class="kpi">30+</div><div class="label">Modules automated</div></div>
-<div class="card"><div class="kpi">0</div><div class="label">Manual intervention</div></div>
+<div class="card"><div class="kpi">35+</div><div class="label">Modules automated</div></div>
+<div class="card"><div class="kpi">5%</div><div class="label">Manual intervention required</div></div>
 </div>
 </section>
 
 <section class="section">
 <div class="grid three">
 <div class="card"><h3>Problem</h3><p>Manual multi-product builds caused delays, inconsistencies, and high operational overhead.</p></div>
-<div class="card"><h3>Solution</h3><p>Automated pipeline using PowerShell + RoboHelp CLI for build, validation, and deployment.</p></div>
-<div class="card"><h3>Impact</h3><p>~80% reduction in effort with fully unattended publishing.</p></div>
+<div class="card"><h3>Solution</h3><p>Automated pipeline using PowerShell + RoboHelp CLI for REFRESH. BUILD, and DEPLOY.</p></div>
+<div class="card"><h3>Impact</h3><p>~80% reduction in effort with fully unattended publishing with logs for validation.</p></div>
 </div>
 </section>
 
@@ -248,21 +248,21 @@ border:1px solid rgba(96,165,250,0.25);
 <div class="ps-badge">PS</div>
 <div class="icon">🛠</div>
 <h4>RoboHelp CLI</h4>
-<p>Build executed via PowerShell script</p>
+<p>Builds the latest output and commits it to the designated repository</p>
 </div>
 
 <div class="step">
 <div class="ps-badge">PS</div>
 <div class="icon">📦</div>
 <h4>SVN</h4>
-<p>Commit & publish triggered via PowerShell</p>
+<p>Stores the latest output and acts as repo for different versions of documentation such as prod, beta & stage</p>
 </div>
 
 <div class="step">
 <div class="ps-badge">PS</div>
 <div class="icon">🚀</div>
 <h4>Server (WinSCP)</h4>
-<p>Deployment automated via PowerShell transfer</p>
+<p>Automated Deployment into the hosted server via PowerShell transfer</p>
 </div>
 
 </div>
