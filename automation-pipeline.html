@@ -73,7 +73,7 @@ animation:float 3s ease-in-out infinite;
 50%{transform:translateY(-4px);}
 }
 
-/* 🔥 POWERSHELL ORCHESTRATION CONTAINER */
+/* 🔥 PIPELINE */
 .pipeline-wrapper{
 position:relative;
 padding:40px 30px 30px;
@@ -95,7 +95,6 @@ opacity:.6;
 pointer-events:none;
 }
 
-/* HEADER TITLE */
 .pipeline-title{
 position:absolute;
 top:-16px;
@@ -111,7 +110,6 @@ letter-spacing:.3px;
 box-shadow:0 10px 25px rgba(36,88,141,0.35);
 }
 
-/* WORKFLOW */
 .workflow{
 position:relative;
 display:flex;
@@ -147,7 +145,6 @@ transform:translateY(-14px) scale(1.08);
 box-shadow:var(--shadow-pop);
 }
 
-/* POWERSHELL BADGE */
 .ps-badge{
 position:absolute;
 top:-8px;
@@ -197,7 +194,18 @@ color:#bfdbfe;
 border:1px solid rgba(96,165,250,0.25);
 }
 
-.code{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;font-size:12px;overflow:auto;}
+/* 🔥 POWERSHELL SYNTAX */
+.code{background:#0b1220;color:#e5e7eb;padding:16px;border-radius:10px;font-size:13px;font-family:Consolas,monospace;}
+.ps-cmd{color:#60a5fa;}
+.ps-var{color:#fbbf24;}
+.ps-str{color:#34d399;}
+
+/* COLLAPSIBLE */
+.code-container{border-radius:12px;overflow:hidden;}
+.code-header{padding:12px 16px;cursor:pointer;font-weight:600;background:var(--card-bg);}
+.code-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.code-body.open{max-height:3500px;}
+
 .btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;margin-top:10px;}
 .back{display:inline-block;margin-top:30px;color:var(--accent);text-decoration:none;font-weight:600;}
 </style>
@@ -241,87 +249,132 @@ border:1px solid rgba(96,165,250,0.25);
 <div class="pipeline-title">⚙️ PowerShell Automation triggered by Task Scheduler</div>
 
 <div class="workflow" id="workflow">
-
 <div class="dot" id="dot"></div>
 
-<div class="step">
-<div class="ps-badge">PS</div>
-<div class="icon">🛠</div>
-<h4>RoboHelp CLI</h4>
-<p>Builds the latest output and commits it to the designated repository</p>
-</div>
-
-<div class="step">
-<div class="ps-badge">PS</div>
-<div class="icon">📦</div>
-<h4>SVN</h4>
-<p>Stores the latest output and acts as repo for different versions of documentation such as prod, beta & stage</p>
-</div>
-
-<div class="step">
-<div class="ps-badge">PS</div>
-<div class="icon">🚀</div>
-<h4>Server (WinSCP)</h4>
-<p>Automated Deployment into the hosted server via PowerShell transfer</p>
-</div>
+<div class="step"><div class="ps-badge">PS</div><div class="icon">🛠</div><h4>RoboHelp CLI</h4><p>Builds the latest output and commits it to the designated repository</p></div>
+<div class="step"><div class="ps-badge">PS</div><div class="icon">📦</div><h4>SVN</h4><p>Stores the latest output and acts as repo for different versions of documentation such as prod, beta & stage</p></div>
+<div class="step"><div class="ps-badge">PS</div><div class="icon">🚀</div><h4>Server (WinSCP)</h4><p>Automated Deployment into the hosted server via PowerShell transfer</p></div>
 
 </div>
 </div>
-
-
 </section>
 
-<!-- ✅ UPGRADED TECH STACK -->
 <section class="section">
 <h2>Tech Stack</h2>
-
-<p class="label" style="margin-bottom:20px;">
-Modular automation architecture designed for scalable, unattended documentation publishing
-</p>
+<p class="label" style="margin-bottom:20px;">Modular automation architecture designed for scalable, unattended documentation publishing</p>
 
 <div class="grid three">
-
-<div class="card">
-<h4>⚙️ PowerShell Automation Layer</h4>
-<p class="label">Controls end-to-end workflow execution and scheduling</p>
-<div>
-<span class="tag">PowerShell Automation</span>
-<span class="tag">Windows Task Scheduler</span>
-</div>
-</div>
-
-<div class="card">
-<h4>🛠 Build & Processing</h4>
-<p class="label">Generates and compiles documentation outputs</p>
-<div>
-<span class="tag">Adobe RoboHelp CLI</span>
-</div>
-</div>
-
-<div class="card">
-<h4>📦 Versioning & Distribution</h4>
-<p class="label">Manages storage, version control, and deployment</p>
-<div>
-<span class="tag">SVN Repository</span>
-<span class="tag">Posh-SSH (SFTP Automation)</span>
-<span class="tag">WinSCP</span>
-</div>
-</div>
-
+<div class="card"><h4>⚙️ PowerShell Automation Layer</h4><p class="label">Controls end-to-end workflow execution and scheduling</p><div><span class="tag">PowerShell Automation</span><span class="tag">Windows Task Scheduler</span></div></div>
+<div class="card"><h4>🛠 Build & Processing</h4><p class="label">Generates and compiles documentation outputs</p><div><span class="tag">Adobe RoboHelp CLI</span></div></div>
+<div class="card"><h4>📦 Versioning & Distribution</h4><p class="label">Manages storage, version control, and deployment</p><div><span class="tag">SVN Repository</span><span class="tag">Posh-SSH (SFTP Automation)</span><span class="tag">WinSCP</span></div></div>
 </div>
 </section>
 
 <section class="section">
 <h2>Code Snapshot</h2>
-<div class="card">
-<div class="code">
-Start-Process -FilePath $roboHelpPath 
--ArgumentList "--cl \"$ProjectFilePath\" -o help" 
--NoNewWindow -Wait
 
-Set-SFTPItem -SessionId $session.SessionId 
--Path $_.FullName 
--Destination $RemotePath -Force
+<div class="card">
+<div class="code-container">
+
+<div class="code-header" onclick="toggleCode()">PowerShell Script</div>
+
+<div class="code-body" id="codeBody">
+<div class="code">
+<span class="ps-cmd"><span class="ps-cmd"># The below script refreshes the mentioned SVN repository</span><br>
+<span class="ps-cmd"># Define the path to the SVN working directory</span><br>
+<span class="ps-var">$workingDirectory</span> = <span class="ps-str">"C:\Users\akraj\Desktop\documentation"</span><br><br>
+
+<span class="ps-var">$tortoiseProcPath</span> = <span class="ps-str">"C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe"</span><br><br>
+
+<span class="ps-cmd"># Check if the TortoiseProc executable exists</span><br>
+<span class="ps-cmd">if</span> (<span class="ps-cmd">Test-Path</span> <span class="ps-var">$tortoiseProcPath</span>) {<br>
+
+&nbsp;&nbsp;<span class="ps-cmd"># Run SVN update</span><br>
+&nbsp;&nbsp;<span class="ps-var">$process</span> = <span class="ps-cmd">Start-Process</span> -FilePath <span class="ps-var">$tortoiseProcPath</span> `<br>
+&nbsp;&nbsp;-ArgumentList <span class="ps-str">"/command:update"</span>, <span class="ps-str">"/path:$workingDirectory"</span>, <span class="ps-str">"/closeonend:1"</span> `<br>
+&nbsp;&nbsp;-WindowStyle Minimized -PassThru<br><br>
+
+&nbsp;&nbsp;<span class="ps-var">$process</span> | <span class="ps-cmd">Wait-Process</span><br><br>
+
+&nbsp;&nbsp;<span class="ps-cmd">Write-Host</span> <span class="ps-str">"OK"</span><br>
+
+} <span class="ps-cmd">else</span> {<br>
+&nbsp;&nbsp;<span class="ps-cmd">Write-Output</span> <span class="ps-str">"TortoiseProc executable not found at $tortoiseProcPath"</span><br>
+}<br><br>
+
+<span class="ps-cmd">sleep</span> 10<br><br>
+
+<span class="ps-cmd"># Generate latest build</span><br>
+<span class="ps-var">$roboHelpPath</span> = <span class="ps-str">"C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe"</span><br>
+<span class="ps-var">$projectFilePath</span> = <span class="ps-str">"C:\Users\jpadavala\Desktop\documentation\c-project_files\insightnow\insightnow.rhpj"</span><br>
+<span class="ps-var">$outputType</span> = <span class="ps-str">"help"</span><br>
+<span class="ps-var">$logFilePath</span> = <span class="ps-str">"C:\Users\jpadavala\Desktop\documentation\f-build_logs\insightnow.html"</span><br>
+<span class="ps-var">$outputPath</span> = <span class="ps-str">"C:\Users\jpadavala\Desktop\documentation\f-build_logs\insightnow.html"</span><br><br>
+
+<span class="ps-cmd">Start-Process</span> -FilePath <span class="ps-var">$roboHelpPath</span> `<br>
+-ArgumentList <span class="ps-str">"--cl `"$projectFilePath`" -o `"$outputType`" --log `"$logFilePath`" -p `"$outputPath`""</span> `<br>
+-NoNewWindow -Wait<br><br>
+
+<span class="ps-cmd">sleep</span> 30<br><br>
+
+<span class="ps-cmd"># Deploy build using Posh-SSH</span><br>
+<span class="ps-cmd">Import-Module</span> Posh-SSH<br><br>
+
+<span class="ps-cmd">Function</span> Invoke-SCP {<br>
+&nbsp;&nbsp;<span class="ps-cmd">param</span>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="ps-var">$LocalPath</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="ps-var">$RemotePath</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="ps-var">$Server</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="ps-var">$Password</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="ps-var">$User</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[int]<span class="ps-var">$Port</span> = 22<br>
+&nbsp;&nbsp;)<br><br>
+
+&nbsp;&nbsp;<span class="ps-var">$pass</span> = <span class="ps-var">$Password</span> | <span class="ps-cmd">ConvertTo-SecureString</span> -AsPlainText -Force<br>
+&nbsp;&nbsp;<span class="ps-var">$MySecureCreds</span> = <span class="ps-cmd">New-Object</span> System.Management.Automation.PSCredential(<span class="ps-var">$User</span>, <span class="ps-var">$pass</span>)<br><br>
+
+&nbsp;&nbsp;<span class="ps-var">$session</span> = <span class="ps-cmd">New-SFTPSession</span> -ComputerName <span class="ps-var">$Server</span> -Credential <span class="ps-var">$MySecureCreds</span> -Port <span class="ps-var">$Port</span><br><br>
+
+&nbsp;&nbsp;<span class="ps-cmd">if</span> (<span class="ps-var">$session</span>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-cmd">Write-Host</span> <span class="ps-str">"Connected to $Server. Initiating file transfer..."</span><br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-var">$files</span> = <span class="ps-cmd">Get-ChildItem</span> -Path <span class="ps-var">$LocalPath</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-var">$files</span> | % {<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-var">$fullname</span> = <span class="ps-var">$_.fullname</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-var">$filename</span> = <span class="ps-var">$_.Name</span><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-cmd">sleep</span> 5<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-cmd">Write-Host</span> <span class="ps-str">"Attempting to transfer file: $fullname to $remoteDirectory"</span><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-var">$output</span> = <span class="ps-cmd">Set-SFTPItem</span> -SessionId <span class="ps-var">$session.SessionId</span> `<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Path <span class="ps-str">"$fullname"</span> -Destination <span class="ps-str">"$remoteDirectory"</span> -Force<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-var">$output</span><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-cmd">Write-Host</span> <span class="ps-str">"File transfer complete."</span><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-cmd">Remove-SFTPSession</span> -SessionId <span class="ps-var">$session.SessionId</span><br>
+
+&nbsp;&nbsp;} <span class="ps-cmd">else</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ps-cmd">Write-Host</span> <span class="ps-str">"Failed to connect to $Server."</span><br>
+&nbsp;&nbsp;}<br>
+}<br><br>
+
+<span class="ps-cmd"># Variables</span><br>
+<span class="ps-var">$localDirectory</span> = <span class="ps-str">"C:\Users\XXXXXX\Desktop\documentation\d-help_outputs\product\*"</span><br>
+<span class="ps-var">$remoteDirectory</span> = <span class="ps-str">"/var/www/html/help/build/product/"</span><br>
+<span class="ps-var">$remoteHost</span> = <span class="ps-str">"172.XX.XX.XXX"</span><br>
+<span class="ps-var">$remoteUser</span> = <span class="ps-str">"XXXXXXX"</span><br>
+<span class="ps-var">$remotePassword</span> = <span class="ps-str">"XXXXXXXX"</span><br><br>
+
+<span class="ps-cmd">Invoke-SCP</span> -LocalPath <span class="ps-var">$localDirectory</span> -RemotePath <span class="ps-var">$remoteDirectory</span> -Server <span class="ps-var">$remoteHost</span> -Password <span class="ps-var">$remotePassword</span> -User <span class="ps-var">$remoteUser</span> -Port 22
+</div>
+</div>
+
 </div>
 </div>
 </section>
@@ -341,6 +394,10 @@ window.onload=function(){
 if(localStorage.getItem("theme")==="dark"){
 document.body.classList.add("dark");
 }
+}
+
+function toggleCode(){
+document.getElementById("codeBody").classList.toggle("open");
 }
 
 const dot = document.getElementById("dot");
