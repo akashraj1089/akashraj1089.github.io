@@ -201,11 +201,82 @@ border:1px solid rgba(96,165,250,0.25);
 .ps-str{color:#34d399;}
 
 /* COLLAPSIBLE */
-.code-container{border-radius:12px;overflow:hidden;}
+.code-container{border-radius:16px;overflow:hidden;}
 .code-header{padding:12px 16px;cursor:pointer;font-weight:600;background:var(--card-bg);}
 .code-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
 .code-body.open{max-height:3500px;}
+/* 🔥 MODERN COLLAPSIBLE UPGRADE */
 
+.code-container{
+border-radius:14px;
+overflow:hidden;
+border:1px solid rgba(0,0,0,0.06);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.code-header{
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+padding:14px 18px;
+cursor:pointer;
+background:var(--card-bg);
+border:none;
+font-size:14px;
+font-weight:600;
+color:var(--text);
+transition:all .25s ease;
+}
+
+.code-header:hover{
+background:rgba(36,88,141,0.06);
+}
+
+.code-title{
+font-weight:600;
+}
+
+.code-action{
+font-size:15px;
+color:var(--muted);
+}
+
+.chevron{
+transition:transform .3s ease;
+opacity:.7;
+}
+
+/* OPEN STATE */
+.code-header.active .chevron{
+transform:rotate(180deg);
+}
+
+/* BODY */
+.code-body{
+max-height:0;
+opacity:0;
+overflow:hidden;
+transition:
+max-height .5s cubic-bezier(.4,0,.2,1),
+opacity .25s ease;
+}
+
+.code-body.open{
+max-height:4000px;
+opacity:1;
+}
+
+/* SCROLLBAR polish */
+.code::-webkit-scrollbar{
+height:6px;
+}
+.code::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.15);
+border-radius:10px;
+}
 .btn{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;margin-top:10px;}
 .back{display:inline-block;margin-top:30px;color:var(--accent);text-decoration:none;font-weight:600;}
 </style>
@@ -277,7 +348,16 @@ border:1px solid rgba(96,165,250,0.25);
 <div class="card">
 <div class="code-container">
 
-<div class="code-header" onclick="toggleCode()">PowerShell Script</div>
+<button 
+  class="code-header" 
+  aria-expanded="false" 
+  aria-controls="codeBody"
+  onclick="toggleCode(this)"
+>
+  <span class="code-title">PowerShell Script Sample</span>
+  <span class="code-action">Click to expand</span>
+  <span class="chevron">⌄</span>
+</button>
 
 <div class="code-body" id="codeBody">
 <div class="code">
