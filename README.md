@@ -1,6 +1,6 @@
 # 👋 Akash Raj – Documentation Portfolio
 
-**Lead Technical Writer | SaaS Documentation Architect | Automation-Driven Publishing**
+**Senior Lead Technical Writer | SaaS Documentation Architect | Automation-Driven Publishing**
 
 This repository hosts my professional portfolio, showcasing enterprise-grade documentation, automation pipelines, and documentation UX enhancements built for scalable SaaS platforms.
 
@@ -8,8 +8,8 @@ This repository hosts my professional portfolio, showcasing enterprise-grade doc
 
 ## 🌐 Live Portfolio
 
-> 🔗 Add your GitHub Pages URL here  
-> Example: https://<your-username>.github.io
+> 🔗 https://akashraj1089.github.io/index.html
+
 
 ---
 
@@ -22,10 +22,6 @@ It combines:
 - Documentation engineering practices  
 - UI-driven documentation enhancements  
 - Automation workflows  
-
----
-
-## 📂 Repository Overview
 
 ---
 
@@ -97,11 +93,7 @@ Sensitive or proprietary information has been modified or excluded.
 
 ## 📬 Contact
 
-- 💼 LinkedIn: Add your profile link  
-- 📧 Email: Add your email  
+- 💼 LinkedIn: (https://www.linkedin.com/in/akash-raj-521990126/)
+- 📧 Email: akash.raj1089@gmail.com 
 
----
 
-## ⭐ Support
-
-If you find this portfolio valuable or insightful, feel free to ⭐ the repository.
